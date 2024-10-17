@@ -86,6 +86,7 @@ namespace BTL_QuanLyNhaTro
                 this.Controls.Remove(btnDelete);
                 yPosition -= 25;
                 AdjustFormHeight(-25);
+                dem--;
             };
             // Thêm các TextBox mới vào form
             this.Controls.Add(cbDichVu);
