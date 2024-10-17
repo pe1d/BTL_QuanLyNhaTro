@@ -51,12 +51,12 @@ namespace BTL_QuanLyNhaTro
         public void Login(string username, string password)
         {
             AuthenticationService authService = new AuthenticationService();
-            User user = authService.Authenticate(username, password);
-
-            if (user != null)
+            authService.Authenticate(username, password);
+            //MessageBox.Show(User.RoleID.ToString());
+            if (User.RoleID != 0)
             {
                 MessageBox.Show("Đăng nhập thành công!");
-                FirstForm f = new FirstForm(user);
+                FirstForm f = new FirstForm();
                 f.Show();
                 this.Hide();
             }

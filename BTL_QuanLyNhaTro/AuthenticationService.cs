@@ -4,17 +4,19 @@ using System.Text;
 using System.Configuration;
 using System.Data.SqlClient;
 using static BTL_QuanLyNhaTro.FunctionAll;
+using System.Windows.Forms;
+
 namespace BTL_QuanLyNhaTro
 {
     public class AuthenticationService
     {
         public class User
         {
-            public string UserID { get; set; }
-            public string Username { get; set; }
-            public int RoleID { get; set; }
+            public static string UserID { get; set; }
+            public static string Username { get; set; }
+            public static int RoleID { get; set; }
         }
-        public User Authenticate(string username, string password)
+        public void Authenticate(string username, string password)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -28,17 +30,14 @@ namespace BTL_QuanLyNhaTro
                     {
                         if (reader.Read())
                         {
-                            return new User
-                            {
-                                UserID = reader["MaTaiKhoan"].ToString(),
-                                Username = reader["TenDangNhap"].ToString(),
-                                RoleID = int.Parse(reader["MaVaiTro"].ToString()),
-                            };
+                            //MessageBox.Show(reader["MaTaiKhoan"].ToString());
+                            User.UserID = reader["MaTaiKhoan"].ToString();
+                            User.Username = reader["TenDangNhap"].ToString();
+                            User.RoleID = int.Parse(reader["MaVaiTro"].ToString());
                         }
                     }
                 }
             }
-            return null;
         }
 
 

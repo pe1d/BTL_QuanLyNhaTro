@@ -362,4 +362,7 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 
-.BTL_QuanLyNhaTro/App.config
+<<<<<<< HEAD
+BTL_QuanLyNhaTro/App.config
+=======
+>>>>>>> 771b7b2a52214959e007f15d7128454c2ee230f0

@@ -11,10 +11,10 @@ namespace BTL_QuanLyNhaTro
 {
     public partial class FirstForm : Form
     {
-        public FirstForm(User user)
+        public FirstForm()
         {
             InitializeComponent();
-            ApplyRolePermissions(user.RoleID);
+            ApplyRolePermissions(User.RoleID);
         }
         private void ApplyRolePermissions(int roleID)
         {

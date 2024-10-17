@@ -49,6 +49,7 @@ namespace BTL_QuanLyNhaTro
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.btn_addHoaDon = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_ListHoaDon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,7 +66,7 @@ namespace BTL_QuanLyNhaTro
             // dGV_ListHoaDon
             // 
             this.dGV_ListHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGV_ListHoaDon.Location = new System.Drawing.Point(62, 263);
+            this.dGV_ListHoaDon.Location = new System.Drawing.Point(62, 303);
             this.dGV_ListHoaDon.Name = "dGV_ListHoaDon";
             this.dGV_ListHoaDon.Size = new System.Drawing.Size(464, 150);
             this.dGV_ListHoaDon.TabIndex = 1;
@@ -77,6 +78,7 @@ namespace BTL_QuanLyNhaTro
             this.cb_Phong.Name = "cb_Phong";
             this.cb_Phong.Size = new System.Drawing.Size(111, 21);
             this.cb_Phong.TabIndex = 2;
+            this.cb_Phong.SelectedIndexChanged += new System.EventHandler(this.cb_Phong_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -222,11 +224,22 @@ namespace BTL_QuanLyNhaTro
             this.label12.TabIndex = 25;
             this.label12.Text = "Đơn giá";
             // 
+            // btn_addHoaDon
+            // 
+            this.btn_addHoaDon.Location = new System.Drawing.Point(62, 274);
+            this.btn_addHoaDon.Name = "btn_addHoaDon";
+            this.btn_addHoaDon.Size = new System.Drawing.Size(90, 23);
+            this.btn_addHoaDon.TabIndex = 26;
+            this.btn_addHoaDon.Text = "Thêm hóa đơn";
+            this.btn_addHoaDon.UseVisualStyleBackColor = true;
+            this.btn_addHoaDon.Click += new System.EventHandler(this.btn_addHoaDon_Click);
+            // 
             // FormThemHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(591, 439);
+            this.ClientSize = new System.Drawing.Size(591, 476);
+            this.Controls.Add(this.btn_addHoaDon);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -278,5 +291,6 @@ namespace BTL_QuanLyNhaTro
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button btn_addHoaDon;
     }
 }

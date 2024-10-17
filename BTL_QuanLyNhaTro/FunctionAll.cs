@@ -11,7 +11,7 @@ namespace BTL_QuanLyNhaTro
     class FunctionAll
     {
         public static string connectionString = ConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ConnectionString;
-        public static SqlConnection cnn = new SqlConnection(connectionString); 
+        public static SqlConnection cnn = new SqlConnection(connectionString);
         public static DataTable GetData(SqlCommand cmd)
         {
             DataTable dt = new DataTable();
@@ -22,7 +22,7 @@ namespace BTL_QuanLyNhaTro
                 da.Fill(dt);
             }
             catch (Exception e)
-            { 
+            {
                 MessageBox.Show(e.Message);
             }
             return dt;
@@ -34,6 +34,10 @@ namespace BTL_QuanLyNhaTro
             cbb.ValueMember = dt.Columns[0].ColumnName;
             cbb.DisplayMember = dt.Columns[1].ColumnName;
         }
-    }
+        public static bool HasData(DataTable table)
+        {
+            return table != null && table.Rows.Count > 0;
+        }
 
+    }
 }

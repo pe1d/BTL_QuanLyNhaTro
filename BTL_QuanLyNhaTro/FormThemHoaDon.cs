@@ -7,12 +7,17 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using static BTL_QuanLyNhaTro.FunctionAll;
+using static BTL_QuanLyNhaTro.AuthenticationService;
 
 namespace BTL_QuanLyNhaTro
 {
     public partial class FormThemHoaDon : Form
     {
         private SqlCommand cmdSDichVU = new SqlCommand("Select * from DichVu");
+        private SqlCommand cmdSChuTro = new SqlCommand("Select * from ChuTro where MaChuTro = '" + User.UserID+"'");
+        private SqlCommand cmdSPhongCT = new SqlCommand("Select * from Phong where MaTrangThai = '3' AND MaChuTro = '" + User.UserID + "'");
+        private SqlCommand cmdSPhongAll = new SqlCommand("Select * from Phong where MaTrangThai = '3'");
+        private List<Control[]> serviceRows = new List<Control[]>();
         public FormThemHoaDon()
         {
             InitializeComponent();
@@ -20,7 +25,33 @@ namespace BTL_QuanLyNhaTro
 
         private void FormThemHoaDon_Load(object sender, EventArgs e)
         {
-
+            if (User.RoleID == 3)
+            {
+                tb_NguoiLap.Text = "ADMIN";
+                LoadDataToComboBox(cmdSPhongAll, cb_Phong);
+            }
+            if(User.RoleID == 2)
+            {
+                DataTable dt = GetData(cmdSChuTro);
+                DataRow dr = dt.Rows[0];
+                if(dr["TenChuTro"].ToString() != null)
+                {
+                    tb_NguoiLap.Text = dr["TenChuTro"].ToString();
+                    tb_NguoiLap.ReadOnly = true;
+                    tb_Khach.ReadOnly = true;
+                    tb_GiaPhong.ReadOnly = true;
+                    DataTable dtPhong = GetData(cmdSPhongCT);
+                    if(dtPhong != null)
+                    {
+                        LoadDataToComboBox(cmdSPhongCT, cb_Phong);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không còn phòng trống");
+                    }
+                    
+                }
+            }
         }
 
         private void addSerHD_Click(object sender, EventArgs e)
@@ -56,8 +87,8 @@ namespace BTL_QuanLyNhaTro
             numSoLuong.Size = new Size(62, 20);
             txtThanhTien.Size = new Size(111, 20);
             btnDelete.Size = new Size(50, 20);
-            txtDonVi.Enabled = false;
-            txtDonGia.Enabled = false;
+            txtDonVi.ReadOnly = true;
+            txtDonGia.ReadOnly = true;
             //Khởi tạo giá trị
             btnDelete.Text = "Xóa";
             LoadDataToComboBox(cmdSDichVU, cbDichVu);
@@ -68,7 +99,7 @@ namespace BTL_QuanLyNhaTro
                 DataTable dt = GetData(cmdSDichVuCondition);
                 //LogDataTable(dt);
                 DataRow row = dt.Rows[0];
-                if (dt.Rows[0] == null)
+                if (row == null)
                 {
                     txtDonVi.Text = "";
                     txtDonGia.Text = "";
@@ -78,15 +109,18 @@ namespace BTL_QuanLyNhaTro
             };
             btnDelete.Click += (s, ev) =>
             {
-                this.Controls.Remove(cbDichVu);
-                this.Controls.Remove(txtDonGia);
-                this.Controls.Remove(txtDonVi);
-                this.Controls.Remove(numSoLuong);
-                this.Controls.Remove(txtThanhTien);
-                this.Controls.Remove(btnDelete);
-                yPosition -= 25;
-                AdjustFormHeight(-25);
-                dem--;
+                Control[] row = serviceRows.Find(r => r[0] == cbDichVu);
+                if (row != null)
+                {
+                    foreach (var control in row)
+                    {
+                        this.Controls.Remove(control);
+                    }
+                    serviceRows.Remove(row);
+                    UpdateRowPositions();
+                    AdjustFormHeight(-25);
+                    dem--;
+                }
             };
             // Thêm các TextBox mới vào form
             this.Controls.Add(cbDichVu);
@@ -104,6 +138,7 @@ namespace BTL_QuanLyNhaTro
                 }
             };
             // Cập nhật vị trí y cho dòng tiếp theo
+            serviceRows.Add(new Control[] { cbDichVu, txtDonGia, txtDonVi, numSoLuong, txtThanhTien, btnDelete });
             yPosition += 25;
             // Cập nhật ví trí cho datagridview và form
             AdjustFormHeight(25);
@@ -116,6 +151,48 @@ namespace BTL_QuanLyNhaTro
         {
             this.ClientSize = new Size(this.ClientSize.Width, this.ClientSize.Height + change);
             dGV_ListHoaDon.Location = new Point(dGV_ListHoaDon.Location.X, dGV_ListHoaDon.Location.Y + change);
+            btn_addHoaDon.Location = new Point(btn_addHoaDon.Location.X, btn_addHoaDon.Location.Y + change); ;
+        }
+        private void cb_Phong_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComboBox cb = sender as ComboBox;
+            SqlCommand cmdSPhongKT = new SqlCommand(@"select * from HopDong 
+                                    inner join NguoiThue ON NguoiThue.MaNguoiThue = HopDong.MaNguoiThue
+                                    where HopDong.MaPhong = '" + cb.SelectedValue +"'");
+            DataTable dt = GetData(cmdSPhongKT);
+            if (HasData(dt))
+            {
+                DataRow dr = dt.Rows[0];
+                if (dr["HoTen"].ToString() != null)
+                {
+                    tb_Khach.Text = dr["HoTen"].ToString();
+                    tb_GiaPhong.Text = dr["TongTienThue"].ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Có 1 vài lỗi xảy ra");
+                }
+            }
+            
+        }
+        private void UpdateRowPositions()
+        {
+            yPosition = 245; // Đặt lại vị trí Y ban đầu
+            foreach (var row in serviceRows)
+            {
+                //MessageBox.Show(yPosition.ToString());
+                row[0].Location = new Point(62, yPosition); // cbDichVu
+                row[1].Location = new Point(189, yPosition); // txtDonGia
+                row[2].Location = new Point(292, yPosition); // txtDonVi
+                row[3].Location = new Point(347, yPosition); // numSoLuong
+                row[4].Location = new Point(415, yPosition); // txtThanhTien
+                row[5].Location = new Point(536, yPosition); // btnDelete
+                yPosition += 25;
+            }
+        }
+        private void btn_addHoaDon_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
