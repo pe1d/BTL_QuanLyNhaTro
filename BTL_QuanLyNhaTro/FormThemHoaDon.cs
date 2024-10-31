@@ -21,6 +21,7 @@ namespace BTL_QuanLyNhaTro
         public FormThemHoaDon()
         {
             InitializeComponent();
+            dtP_to.MinDate = DateTime.Now.AddDays(5);
         }
 
         private void FormThemHoaDon_Load(object sender, EventArgs e)
@@ -106,6 +107,7 @@ namespace BTL_QuanLyNhaTro
                 }
                 txtDonVi.Text = row["DonVi"].ToString();
                 txtDonGia.Text = row["DonGia"].ToString();
+                tB_tongTien.Text = CalculateTotalAmount().ToString();
             };
             btnDelete.Click += (s, ev) =>
             {
@@ -121,6 +123,7 @@ namespace BTL_QuanLyNhaTro
                     AdjustFormHeight(-25);
                     dem--;
                 }
+                tB_tongTien.Text = CalculateTotalAmount().ToString();
             };
             // Thêm các TextBox mới vào form
             this.Controls.Add(cbDichVu);
@@ -136,6 +139,7 @@ namespace BTL_QuanLyNhaTro
                 {
                     txtThanhTien.Text = (giaTien * numSoLuong.Value).ToString();
                 }
+                tB_tongTien.Text = CalculateTotalAmount().ToString();
             };
             // Cập nhật vị trí y cho dòng tiếp theo
             serviceRows.Add(new Control[] { cbDichVu, txtDonGia, txtDonVi, numSoLuong, txtThanhTien, btnDelete });
@@ -150,7 +154,7 @@ namespace BTL_QuanLyNhaTro
         private void AdjustFormHeight(int change)
         {
             this.ClientSize = new Size(this.ClientSize.Width, this.ClientSize.Height + change);
-            dGV_ListHoaDon.Location = new Point(dGV_ListHoaDon.Location.X, dGV_ListHoaDon.Location.Y + change);
+            //dGV_ListHoaDon.Location = new Point(dGV_ListHoaDon.Location.X, dGV_ListHoaDon.Location.Y + change);
             btn_addHoaDon.Location = new Point(btn_addHoaDon.Location.X, btn_addHoaDon.Location.Y + change); ;
         }
         private void cb_Phong_SelectedIndexChanged(object sender, EventArgs e)
@@ -173,7 +177,7 @@ namespace BTL_QuanLyNhaTro
                     MessageBox.Show("Có 1 vài lỗi xảy ra");
                 }
             }
-            
+            tB_tongTien.Text = CalculateTotalAmount().ToString();
         }
         private void UpdateRowPositions()
         {
@@ -192,7 +196,52 @@ namespace BTL_QuanLyNhaTro
         }
         private void btn_addHoaDon_Click(object sender, EventArgs e)
         {
-
+            // Generate a new invoice ID 
+            string maHoaDon = "HD_"+DateTime.Now.ToString();
+            // Insert invoice using stored procedure
+            SqlCommand cmdInsertHoaDon = new SqlCommand("ThemHoaDon");
+            cmdInsertHoaDon.CommandType = CommandType.StoredProcedure; 
+            cmdInsertHoaDon.Parameters.AddWithValue("@MaHoaDon", maHoaDon); 
+            cmdInsertHoaDon.Parameters.AddWithValue("@MaPhong", cb_Phong.SelectedValue);
+            cmdInsertHoaDon.Parameters.AddWithValue("@NguoiLap", tb_NguoiLap.Text);
+            cmdInsertHoaDon.Parameters.AddWithValue("@NgayLapHoaDon", DateTime.Now);
+            cmdInsertHoaDon.Parameters.AddWithValue("@HanHoaDon", dtP_to.Value);
+            cmdInsertHoaDon.Parameters.AddWithValue("@SoTienThanhToan", CalculateTotalAmount());
+            cmdInsertHoaDon.Parameters.AddWithValue("@MaTrangThai", "2");
+            ExecuteNonQuery(cmdInsertHoaDon);
+            int dem = 0;
+            foreach (var row in serviceRows)
+            {
+                ComboBox cbDichVu = (ComboBox)row[0]; 
+                TextBox txtDonGia = (TextBox)row[1]; 
+                TextBox txtDonVi = (TextBox)row[2]; 
+                NumericUpDown numSoLuong = (NumericUpDown)row[3]; 
+                TextBox txtThanhTien = (TextBox)row[4]; 
+                SqlCommand cmdInsertHoaDonDichVu = new SqlCommand("ThemHoaDonDichVu"); 
+                cmdInsertHoaDonDichVu.CommandType = CommandType.StoredProcedure;
+                cmdInsertHoaDonDichVu.Parameters.AddWithValue("@MaHoaDonDichVu", "HD_DV_" + DateTime.Now.ToString() +"_" + dem.ToString());
+                cmdInsertHoaDonDichVu.Parameters.AddWithValue("@MaHoaDon", maHoaDon); 
+                cmdInsertHoaDonDichVu.Parameters.AddWithValue("@MaDichVu", cbDichVu.SelectedValue); 
+                cmdInsertHoaDonDichVu.Parameters.AddWithValue("@SoLuong", numSoLuong.Value); 
+                cmdInsertHoaDonDichVu.Parameters.AddWithValue("@ThanhTien", txtThanhTien.Text); 
+                ExecuteNonQuery(cmdInsertHoaDonDichVu);
+                dem++;
+            }
+            MessageBox.Show("Thêm hóa đơn thành công.");
+        }
+        private decimal CalculateTotalAmount() { 
+            decimal totalAmount = 0; 
+            foreach (var row in serviceRows) { 
+                TextBox txtThanhTien = (TextBox)row[4]; 
+                if (decimal.TryParse(txtThanhTien.Text, out decimal thanhTien)) { 
+                    totalAmount += thanhTien; 
+                } 
+            }
+            if (!string.IsNullOrEmpty(tb_GiaPhong.Text))
+            {
+                totalAmount += decimal.Parse(tb_GiaPhong.Text);
+            }
+            return totalAmount; 
         }
     }
 }

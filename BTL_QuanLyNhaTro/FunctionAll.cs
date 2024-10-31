@@ -38,6 +38,14 @@ namespace BTL_QuanLyNhaTro
         {
             return table != null && table.Rows.Count > 0;
         }
+        public static void ExecuteNonQuery(SqlCommand cmd) { 
+            using (SqlConnection conn = new SqlConnection(connectionString)) 
+            { 
+                cmd.Connection = conn; 
+                conn.Open(); 
+                cmd.ExecuteNonQuery(); 
+            } 
+        }
 
     }
 }

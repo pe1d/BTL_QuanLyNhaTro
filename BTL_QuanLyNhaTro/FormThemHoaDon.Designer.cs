@@ -30,7 +30,6 @@ namespace BTL_QuanLyNhaTro
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.dGV_ListHoaDon = new System.Windows.Forms.DataGridView();
             this.cb_Phong = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -50,7 +49,8 @@ namespace BTL_QuanLyNhaTro
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.btn_addHoaDon = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dGV_ListHoaDon)).BeginInit();
+            this.label13 = new System.Windows.Forms.Label();
+            this.tB_tongTien = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -62,14 +62,6 @@ namespace BTL_QuanLyNhaTro
             this.label1.Size = new System.Drawing.Size(181, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Thêm hóa đơn";
-            // 
-            // dGV_ListHoaDon
-            // 
-            this.dGV_ListHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGV_ListHoaDon.Location = new System.Drawing.Point(62, 303);
-            this.dGV_ListHoaDon.Name = "dGV_ListHoaDon";
-            this.dGV_ListHoaDon.Size = new System.Drawing.Size(464, 150);
-            this.dGV_ListHoaDon.TabIndex = 1;
             // 
             // cb_Phong
             // 
@@ -107,6 +99,7 @@ namespace BTL_QuanLyNhaTro
             // 
             // dtP_from
             // 
+            this.dtP_from.Enabled = false;
             this.dtP_from.Location = new System.Drawing.Point(151, 136);
             this.dtP_from.Name = "dtP_from";
             this.dtP_from.Size = new System.Drawing.Size(190, 20);
@@ -234,11 +227,30 @@ namespace BTL_QuanLyNhaTro
             this.btn_addHoaDon.UseVisualStyleBackColor = true;
             this.btn_addHoaDon.Click += new System.EventHandler(this.btn_addHoaDon_Click);
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(354, 143);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(55, 13);
+            this.label13.TabIndex = 27;
+            this.label13.Text = "Tổng tiền:";
+            // 
+            // tB_tongTien
+            // 
+            this.tB_tongTien.Enabled = false;
+            this.tB_tongTien.Location = new System.Drawing.Point(415, 140);
+            this.tB_tongTien.Name = "tB_tongTien";
+            this.tB_tongTien.Size = new System.Drawing.Size(110, 20);
+            this.tB_tongTien.TabIndex = 28;
+            // 
             // FormThemHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(591, 476);
+            this.ClientSize = new System.Drawing.Size(574, 351);
+            this.Controls.Add(this.tB_tongTien);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.btn_addHoaDon);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
@@ -258,12 +270,10 @@ namespace BTL_QuanLyNhaTro
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cb_Phong);
-            this.Controls.Add(this.dGV_ListHoaDon);
             this.Controls.Add(this.label1);
             this.Name = "FormThemHoaDon";
             this.Text = "Thêm hóa đơn";
             this.Load += new System.EventHandler(this.FormThemHoaDon_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dGV_ListHoaDon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -272,7 +282,6 @@ namespace BTL_QuanLyNhaTro
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dGV_ListHoaDon;
         private System.Windows.Forms.ComboBox cb_Phong;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -292,5 +301,7 @@ namespace BTL_QuanLyNhaTro
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btn_addHoaDon;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox tB_tongTien;
     }
 }
