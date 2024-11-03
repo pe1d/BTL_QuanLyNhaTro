@@ -46,6 +46,20 @@ namespace BTL_QuanLyNhaTro
                 cmd.ExecuteNonQuery(); 
             } 
         }
-
+        public static void tb_NumberInput_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Allow only digits, the backspace key, and the decimal point
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+        public static void AutoResizeDataGridView(DataGridView dgv)
+        {
+            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dgv.AutoResizeColumns();
+            dgv.AutoResizeRows();
+        }
     }
 }

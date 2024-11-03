@@ -40,23 +40,15 @@ namespace BTL_QuanLyNhaTro
             this.mApp_mRoom_R = new System.Windows.Forms.ToolStripMenuItem();
             this.mApp_vRoom = new System.Windows.Forms.ToolStripMenuItem();
             this.mApp_addRoom = new System.Windows.Forms.ToolStripMenuItem();
-            this.mApp_uRoom = new System.Windows.Forms.ToolStripMenuItem();
-            this.mApp_sRoom = new System.Windows.Forms.ToolStripMenuItem();
-            this.mApp_mService_A = new System.Windows.Forms.ToolStripMenuItem();
-            this.mApp_aService = new System.Windows.Forms.ToolStripMenuItem();
-            this.mApp_uService = new System.Windows.Forms.ToolStripMenuItem();
             this.mApp_mContract_R_U = new System.Windows.Forms.ToolStripMenuItem();
             this.mApp_vContract_U = new System.Windows.Forms.ToolStripMenuItem();
-            this.mApp_sContract = new System.Windows.Forms.ToolStripMenuItem();
             this.mApp_aContract = new System.Windows.Forms.ToolStripMenuItem();
             this.mApp_mUser_R = new System.Windows.Forms.ToolStripMenuItem();
             this.mApp_vUser = new System.Windows.Forms.ToolStripMenuItem();
-            this.mApp_uUser = new System.Windows.Forms.ToolStripMenuItem();
             this.cậpNhậtHóaĐơnThanhToánChoKháchThuêToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mApp_mBill_R = new System.Windows.Forms.ToolStripMenuItem();
             this.mApp_aBill = new System.Windows.Forms.ToolStripMenuItem();
             this.mApp_vBill = new System.Windows.Forms.ToolStripMenuItem();
-            this.mApp_sBill = new System.Windows.Forms.ToolStripMenuItem();
             this.mApp_vRevenue_R = new System.Windows.Forms.ToolStripMenuItem();
             this.mApp_earnDetail = new System.Windows.Forms.ToolStripMenuItem();
             this.mApp_earnGeneral = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,6 +56,10 @@ namespace BTL_QuanLyNhaTro
             this.mApp_rRoom = new System.Windows.Forms.ToolStripMenuItem();
             this.tìmKiếmPhòngTrọToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.lb1 = new System.Windows.Forms.Label();
+            this.thToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mApp_mChuTro = new System.Windows.Forms.ToolStripMenuItem();
+            this.thêmChủTrọToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.danhSáchChủTrọToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -127,10 +123,10 @@ namespace BTL_QuanLyNhaTro
             // 
             this.mApp_Manage.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mApp_mRoom_R,
-            this.mApp_mService_A,
             this.mApp_mContract_R_U,
             this.mApp_mUser_R,
-            this.mApp_mBill_R});
+            this.mApp_mBill_R,
+            this.mApp_mChuTro});
             this.mApp_Manage.Name = "mApp_Manage";
             this.mApp_Manage.Size = new System.Drawing.Size(60, 20);
             this.mApp_Manage.Text = "Quản lý";
@@ -139,66 +135,31 @@ namespace BTL_QuanLyNhaTro
             // 
             this.mApp_mRoom_R.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mApp_vRoom,
-            this.mApp_addRoom,
-            this.mApp_uRoom,
-            this.mApp_sRoom});
+            this.mApp_addRoom});
             this.mApp_mRoom_R.Name = "mApp_mRoom_R";
-            this.mApp_mRoom_R.Size = new System.Drawing.Size(177, 22);
+            this.mApp_mRoom_R.Size = new System.Drawing.Size(180, 22);
             this.mApp_mRoom_R.Text = "Quản lý phòng";
             // 
             // mApp_vRoom
             // 
             this.mApp_vRoom.Name = "mApp_vRoom";
-            this.mApp_vRoom.Size = new System.Drawing.Size(201, 22);
+            this.mApp_vRoom.Size = new System.Drawing.Size(193, 22);
             this.mApp_vRoom.Text = "Xem danh sách phòng";
+            this.mApp_vRoom.Click += new System.EventHandler(this.mApp_vRoom_Click);
             // 
             // mApp_addRoom
             // 
             this.mApp_addRoom.Name = "mApp_addRoom";
-            this.mApp_addRoom.Size = new System.Drawing.Size(201, 22);
+            this.mApp_addRoom.Size = new System.Drawing.Size(193, 22);
             this.mApp_addRoom.Text = "Thêm phòng trọ";
-            // 
-            // mApp_uRoom
-            // 
-            this.mApp_uRoom.Name = "mApp_uRoom";
-            this.mApp_uRoom.Size = new System.Drawing.Size(201, 22);
-            this.mApp_uRoom.Text = "Sửa thông tin phòng trọ";
-            // 
-            // mApp_sRoom
-            // 
-            this.mApp_sRoom.Name = "mApp_sRoom";
-            this.mApp_sRoom.Size = new System.Drawing.Size(201, 22);
-            this.mApp_sRoom.Text = "Tìm kiếm phòng trọ";
-            // 
-            // mApp_mService_A
-            // 
-            this.mApp_mService_A.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mApp_aService,
-            this.mApp_uService});
-            this.mApp_mService_A.Name = "mApp_mService_A";
-            this.mApp_mService_A.Size = new System.Drawing.Size(177, 22);
-            this.mApp_mService_A.Text = "Quản lý dịch vụ";
-            // 
-            // mApp_aService
-            // 
-            this.mApp_aService.Name = "mApp_aService";
-            this.mApp_aService.Size = new System.Drawing.Size(187, 22);
-            this.mApp_aService.Text = "Thêm dịch vụ";
-            // 
-            // mApp_uService
-            // 
-            this.mApp_uService.Name = "mApp_uService";
-            this.mApp_uService.Size = new System.Drawing.Size(187, 22);
-            this.mApp_uService.Text = "Sửa thông tin dịch vụ";
             // 
             // mApp_mContract_R_U
             // 
             this.mApp_mContract_R_U.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mApp_vContract_U,
-            this.mApp_sContract,
             this.mApp_aContract});
             this.mApp_mContract_R_U.Name = "mApp_mContract_R_U";
-            this.mApp_mContract_R_U.Size = new System.Drawing.Size(177, 22);
+            this.mApp_mContract_R_U.Size = new System.Drawing.Size(180, 22);
             this.mApp_mContract_R_U.Text = "Quản lý hợp đồng";
             // 
             // mApp_vContract_U
@@ -206,12 +167,6 @@ namespace BTL_QuanLyNhaTro
             this.mApp_vContract_U.Name = "mApp_vContract_U";
             this.mApp_vContract_U.Size = new System.Drawing.Size(184, 22);
             this.mApp_vContract_U.Text = "Danh sách hợp đồng";
-            // 
-            // mApp_sContract
-            // 
-            this.mApp_sContract.Name = "mApp_sContract";
-            this.mApp_sContract.Size = new System.Drawing.Size(184, 22);
-            this.mApp_sContract.Text = "Tìm kiếm hợp đồng";
             // 
             // mApp_aContract
             // 
@@ -223,10 +178,10 @@ namespace BTL_QuanLyNhaTro
             // 
             this.mApp_mUser_R.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mApp_vUser,
-            this.mApp_uUser,
-            this.cậpNhậtHóaĐơnThanhToánChoKháchThuêToolStripMenuItem});
+            this.cậpNhậtHóaĐơnThanhToánChoKháchThuêToolStripMenuItem,
+            this.thToolStripMenuItem});
             this.mApp_mUser_R.Name = "mApp_mUser_R";
-            this.mApp_mUser_R.Size = new System.Drawing.Size(177, 22);
+            this.mApp_mUser_R.Size = new System.Drawing.Size(180, 22);
             this.mApp_mUser_R.Text = "Quản lý khách thuê";
             // 
             // mApp_vUser
@@ -234,12 +189,6 @@ namespace BTL_QuanLyNhaTro
             this.mApp_vUser.Name = "mApp_vUser";
             this.mApp_vUser.Size = new System.Drawing.Size(315, 22);
             this.mApp_vUser.Text = "Xem danh sách khách thuê";
-            // 
-            // mApp_uUser
-            // 
-            this.mApp_uUser.Name = "mApp_uUser";
-            this.mApp_uUser.Size = new System.Drawing.Size(315, 22);
-            this.mApp_uUser.Text = "Sửa thông tin khách hàng";
             // 
             // cậpNhậtHóaĐơnThanhToánChoKháchThuêToolStripMenuItem
             // 
@@ -251,8 +200,7 @@ namespace BTL_QuanLyNhaTro
             // 
             this.mApp_mBill_R.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mApp_aBill,
-            this.mApp_vBill,
-            this.mApp_sBill});
+            this.mApp_vBill});
             this.mApp_mBill_R.Name = "mApp_mBill_R";
             this.mApp_mBill_R.Size = new System.Drawing.Size(180, 22);
             this.mApp_mBill_R.Text = "Quản lý hóa đơn";
@@ -269,12 +217,7 @@ namespace BTL_QuanLyNhaTro
             this.mApp_vBill.Name = "mApp_vBill";
             this.mApp_vBill.Size = new System.Drawing.Size(202, 22);
             this.mApp_vBill.Text = "Xem danh sách hóa đơn";
-            // 
-            // mApp_sBill
-            // 
-            this.mApp_sBill.Name = "mApp_sBill";
-            this.mApp_sBill.Size = new System.Drawing.Size(202, 22);
-            this.mApp_sBill.Text = "Tìm kiếm hóa đơn";
+            this.mApp_vBill.Click += new System.EventHandler(this.mApp_vBill_Click);
             // 
             // mApp_vRevenue_R
             // 
@@ -288,13 +231,13 @@ namespace BTL_QuanLyNhaTro
             // mApp_earnDetail
             // 
             this.mApp_earnDetail.Name = "mApp_earnDetail";
-            this.mApp_earnDetail.Size = new System.Drawing.Size(171, 22);
+            this.mApp_earnDetail.Size = new System.Drawing.Size(180, 22);
             this.mApp_earnDetail.Text = "Báo cáo chi tiết";
             // 
             // mApp_earnGeneral
             // 
             this.mApp_earnGeneral.Name = "mApp_earnGeneral";
-            this.mApp_earnGeneral.Size = new System.Drawing.Size(171, 22);
+            this.mApp_earnGeneral.Size = new System.Drawing.Size(180, 22);
             this.mApp_earnGeneral.Text = "Báo cáo tông quát";
             // 
             // mApp_PayBill
@@ -328,6 +271,33 @@ namespace BTL_QuanLyNhaTro
             this.lb1.Text = " Ứng dụng\r\n quản lý và thuê phòng trọ";
             this.lb1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // thToolStripMenuItem
+            // 
+            this.thToolStripMenuItem.Name = "thToolStripMenuItem";
+            this.thToolStripMenuItem.Size = new System.Drawing.Size(315, 22);
+            this.thToolStripMenuItem.Text = "Thêm khách thuê";
+            // 
+            // mApp_mChuTro
+            // 
+            this.mApp_mChuTro.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.thêmChủTrọToolStripMenuItem,
+            this.danhSáchChủTrọToolStripMenuItem});
+            this.mApp_mChuTro.Name = "mApp_mChuTro";
+            this.mApp_mChuTro.Size = new System.Drawing.Size(180, 22);
+            this.mApp_mChuTro.Text = "Quản lý chủ trọ";
+            // 
+            // thêmChủTrọToolStripMenuItem
+            // 
+            this.thêmChủTrọToolStripMenuItem.Name = "thêmChủTrọToolStripMenuItem";
+            this.thêmChủTrọToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.thêmChủTrọToolStripMenuItem.Text = "Thêm chủ trọ";
+            // 
+            // danhSáchChủTrọToolStripMenuItem
+            // 
+            this.danhSáchChủTrọToolStripMenuItem.Name = "danhSáchChủTrọToolStripMenuItem";
+            this.danhSáchChủTrọToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.danhSáchChủTrọToolStripMenuItem.Text = "Danh sách chủ trọ";
+            // 
             // FirstForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -360,17 +330,10 @@ namespace BTL_QuanLyNhaTro
         private System.Windows.Forms.ToolStripMenuItem mApp_mRoom_R;
         private System.Windows.Forms.ToolStripMenuItem mApp_vRoom;
         private System.Windows.Forms.ToolStripMenuItem mApp_addRoom;
-        private System.Windows.Forms.ToolStripMenuItem mApp_uRoom;
-        private System.Windows.Forms.ToolStripMenuItem mApp_sRoom;
-        private System.Windows.Forms.ToolStripMenuItem mApp_mService_A;
-        private System.Windows.Forms.ToolStripMenuItem mApp_aService;
-        private System.Windows.Forms.ToolStripMenuItem mApp_uService;
         private System.Windows.Forms.ToolStripMenuItem mApp_mContract_R_U;
-        private System.Windows.Forms.ToolStripMenuItem mApp_sContract;
         private System.Windows.Forms.ToolStripMenuItem mApp_aContract;
         private System.Windows.Forms.ToolStripMenuItem mApp_mUser_R;
         private System.Windows.Forms.ToolStripMenuItem mApp_vUser;
-        private System.Windows.Forms.ToolStripMenuItem mApp_uUser;
         private System.Windows.Forms.ToolStripMenuItem cậpNhậtHóaĐơnThanhToánChoKháchThuêToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mApp_rRoom;
         private System.Windows.Forms.ToolStripMenuItem tìmKiếmPhòngTrọToolStripMenuItem1;
@@ -378,9 +341,12 @@ namespace BTL_QuanLyNhaTro
         private System.Windows.Forms.ToolStripMenuItem mApp_mBill_R;
         private System.Windows.Forms.ToolStripMenuItem mApp_aBill;
         private System.Windows.Forms.ToolStripMenuItem mApp_vBill;
-        private System.Windows.Forms.ToolStripMenuItem mApp_sBill;
         private System.Windows.Forms.Label lb1;
         private System.Windows.Forms.ToolStripMenuItem mApp_earnDetail;
         private System.Windows.Forms.ToolStripMenuItem mApp_earnGeneral;
+        private System.Windows.Forms.ToolStripMenuItem thToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mApp_mChuTro;
+        private System.Windows.Forms.ToolStripMenuItem thêmChủTrọToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem danhSáchChủTrọToolStripMenuItem;
     }
 }

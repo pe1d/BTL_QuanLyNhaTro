@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormDSHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDSHoaDon.Designer.cs">
+      <DependentUpon>FormDSHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormBaoCaoDoanhThu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +67,12 @@
     </Compile>
     <Compile Include="FormThemHoaDon.Designer.cs">
       <DependentUpon>FormThemHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormXemChiTietHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormXemChiTietHoaDon.Designer.cs">
+      <DependentUpon>FormXemChiTietHoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="FunctionAll.cs" />
     <Compile Include="AuthenticationService.cs" />
@@ -81,11 +93,17 @@
     <EmbeddedResource Include="FirstForm.resx">
       <DependentUpon>FirstForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormDSHoaDon.resx">
+      <DependentUpon>FormDSHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormSuaHoaDon.resx">
       <DependentUpon>FormSuaHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormThemHoaDon.resx">
       <DependentUpon>FormThemHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormXemChiTietHoaDon.resx">
+      <DependentUpon>FormXemChiTietHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WelcomeForm.resx">
       <DependentUpon>WelcomeForm.cs</DependentUpon>
