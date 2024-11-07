@@ -21,5 +21,4 @@ namespace BTL_QuanLyNhaTro
 
         }
     }
-   
 }

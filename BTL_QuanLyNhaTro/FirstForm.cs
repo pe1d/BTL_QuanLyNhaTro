@@ -67,5 +67,11 @@ namespace BTL_QuanLyNhaTro
             FormThuePhongTro f = new FormThuePhongTro();
             f.Show();
         }
+
+        private void mApp_aContract_Click(object sender, EventArgs e)
+        {
+            FormThemHopDong f = new FormThemHopDong();
+            f.Show();
+        }
     }
 }

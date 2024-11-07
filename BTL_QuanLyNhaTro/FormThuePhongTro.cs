@@ -103,7 +103,7 @@ namespace BTL_QuanLyNhaTro
         {
             int selectedRowIndex = dGV_PhongTro.CurrentRow.Index;
             var maPhong = dGV_PhongTro.Rows[selectedRowIndex].Cells["MaPhong"].Value.ToString();
-            FormThemHopDong formThemHopDong = new FormThemHopDong(maPhong);
+            FormThemHopDong1 formThemHopDong = new FormThemHopDong1(maPhong);
             formThemHopDong.ShowDialog();
             LoadPhongTro(); // Tải lại danh sách phòng sau khi thêm hợp đồng
         }
