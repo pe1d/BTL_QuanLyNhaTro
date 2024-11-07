@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormThanhToanHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThanhToanHoaDon.Designer.cs">
+      <DependentUpon>FormThanhToanHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormDSHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,18 @@
     <Compile Include="FormThemHoaDon.Designer.cs">
       <DependentUpon>FormThemHoaDon.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormThemHopDong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThemHopDong.Designer.cs">
+      <DependentUpon>FormThemHopDong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormThuePhongTro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThuePhongTro.Designer.cs">
+      <DependentUpon>FormThuePhongTro.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormXemChiTietHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +100,12 @@
     <Compile Include="FirstForm.Designer.cs">
       <DependentUpon>FirstForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ThanhToanHoaDonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThanhToanHoaDonForm.Designer.cs">
+      <DependentUpon>ThanhToanHoaDonForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="WelcomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +116,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FirstForm.resx">
       <DependentUpon>FirstForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormThanhToanHoaDon.resx">
+      <DependentUpon>FormThanhToanHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDSHoaDon.resx">
       <DependentUpon>FormDSHoaDon.cs</DependentUpon>
@@ -104,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormXemChiTietHoaDon.resx">
       <DependentUpon>FormXemChiTietHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThanhToanHoaDonForm.resx">
+      <DependentUpon>ThanhToanHoaDonForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WelcomeForm.resx">
       <DependentUpon>WelcomeForm.cs</DependentUpon>

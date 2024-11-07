@@ -55,5 +55,17 @@ namespace BTL_QuanLyNhaTro
         {
 
         }
+
+        private void mApp_PayBill_Click(object sender, EventArgs e)
+        {
+            FormThanhToanHoaDon f = new FormThanhToanHoaDon(); 
+            f.Show();
+        }
+
+        private void mApp_rRoom_Click(object sender, EventArgs e)
+        {
+            FormThuePhongTro f = new FormThuePhongTro();
+            f.Show();
+        }
     }
 }
