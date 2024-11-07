@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="ChuTro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -55,6 +56,13 @@
     </Compile>
     <Compile Include="FormAddRoom.Designer.cs">
       <DependentUpon>FormAddRoom.cs</DependentUpon>
+=======
+    <Compile Include="FormThanhToanHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThanhToanHoaDon.Designer.cs">
+      <DependentUpon>FormThanhToanHoaDon.cs</DependentUpon>
+>>>>>>> bd2001e689572ac0f8130c2f8a558e36d5df156a
     </Compile>
     <Compile Include="FormDSHoaDon.cs">
       <SubType>Form</SubType>
@@ -80,6 +88,18 @@
     <Compile Include="FormThemHoaDon.Designer.cs">
       <DependentUpon>FormThemHoaDon.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormThemHopDong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThemHopDong.Designer.cs">
+      <DependentUpon>FormThemHopDong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormThuePhongTro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThuePhongTro.Designer.cs">
+      <DependentUpon>FormThuePhongTro.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormXemChiTietHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,11 +114,19 @@
     <Compile Include="FirstForm.Designer.cs">
       <DependentUpon>FirstForm.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="NguoiThue.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="NguoiThue.Designer.cs">
       <DependentUpon>NguoiThue.cs</DependentUpon>
+=======
+    <Compile Include="ThanhToanHoaDonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThanhToanHoaDonForm.Designer.cs">
+      <DependentUpon>ThanhToanHoaDonForm.cs</DependentUpon>
+>>>>>>> bd2001e689572ac0f8130c2f8a558e36d5df156a
     </Compile>
     <Compile Include="WelcomeForm.cs">
       <SubType>Form</SubType>
@@ -111,8 +139,13 @@
     <EmbeddedResource Include="FirstForm.resx">
       <DependentUpon>FirstForm.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="FormAddRoom.resx">
       <DependentUpon>FormAddRoom.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="FormThanhToanHoaDon.resx">
+      <DependentUpon>FormThanhToanHoaDon.cs</DependentUpon>
+>>>>>>> bd2001e689572ac0f8130c2f8a558e36d5df156a
     </EmbeddedResource>
     <EmbeddedResource Include="FormDSHoaDon.resx">
       <DependentUpon>FormDSHoaDon.cs</DependentUpon>
@@ -125,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormXemChiTietHoaDon.resx">
       <DependentUpon>FormXemChiTietHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThanhToanHoaDonForm.resx">
+      <DependentUpon>ThanhToanHoaDonForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WelcomeForm.resx">
       <DependentUpon>WelcomeForm.cs</DependentUpon>
