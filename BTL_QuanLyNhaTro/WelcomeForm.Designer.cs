@@ -61,10 +61,11 @@ namespace BTL_QuanLyNhaTro
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(5, 7);
+            this.tabControl1.Location = new System.Drawing.Point(7, 9);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(610, 302);
+            this.tabControl1.Size = new System.Drawing.Size(813, 372);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -76,10 +77,11 @@ namespace BTL_QuanLyNhaTro
             this.tabPage1.Controls.Add(this.tb_pass);
             this.tabPage1.Controls.Add(this.tb_name);
             this.tabPage1.Controls.Add(this.Label3);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(602, 276);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Size = new System.Drawing.Size(805, 343);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Đăng Nhập";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -87,9 +89,10 @@ namespace BTL_QuanLyNhaTro
             // cb_show
             // 
             this.cb_show.AutoSize = true;
-            this.cb_show.Location = new System.Drawing.Point(193, 155);
+            this.cb_show.Location = new System.Drawing.Point(257, 191);
+            this.cb_show.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cb_show.Name = "cb_show";
-            this.cb_show.Size = new System.Drawing.Size(95, 17);
+            this.cb_show.Size = new System.Drawing.Size(114, 20);
             this.cb_show.TabIndex = 3;
             this.cb_show.Text = "Hiện mật khẩu";
             this.cb_show.UseVisualStyleBackColor = true;
@@ -98,9 +101,10 @@ namespace BTL_QuanLyNhaTro
             // bt_login
             // 
             this.bt_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_login.Location = new System.Drawing.Point(193, 189);
+            this.bt_login.Location = new System.Drawing.Point(257, 233);
+            this.bt_login.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bt_login.Name = "bt_login";
-            this.bt_login.Size = new System.Drawing.Size(203, 34);
+            this.bt_login.Size = new System.Drawing.Size(271, 42);
             this.bt_login.TabIndex = 4;
             this.bt_login.Text = "Đăng nhập";
             this.bt_login.UseVisualStyleBackColor = true;
@@ -110,9 +114,10 @@ namespace BTL_QuanLyNhaTro
             // 
             this.Label2.AutoSize = true;
             this.Label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label2.Location = new System.Drawing.Point(108, 129);
+            this.Label2.Location = new System.Drawing.Point(144, 159);
+            this.Label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label2.Name = "Label2";
-            this.Label2.Size = new System.Drawing.Size(79, 20);
+            this.Label2.Size = new System.Drawing.Size(99, 25);
             this.Label2.TabIndex = 13;
             this.Label2.Text = "Mật khẩu:";
             // 
@@ -120,36 +125,40 @@ namespace BTL_QuanLyNhaTro
             // 
             this.Label1.AutoSize = true;
             this.Label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label1.Location = new System.Drawing.Point(78, 84);
+            this.Label1.Location = new System.Drawing.Point(104, 103);
+            this.Label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(109, 20);
+            this.Label1.Size = new System.Drawing.Size(137, 25);
             this.Label1.TabIndex = 14;
             this.Label1.Text = "Tên tài khoản:";
             // 
             // tb_pass
             // 
             this.tb_pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_pass.Location = new System.Drawing.Point(193, 123);
+            this.tb_pass.Location = new System.Drawing.Point(257, 151);
+            this.tb_pass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tb_pass.Name = "tb_pass";
-            this.tb_pass.Size = new System.Drawing.Size(203, 26);
+            this.tb_pass.Size = new System.Drawing.Size(269, 30);
             this.tb_pass.TabIndex = 2;
             this.tb_pass.UseSystemPasswordChar = true;
             // 
             // tb_name
             // 
             this.tb_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_name.Location = new System.Drawing.Point(193, 81);
+            this.tb_name.Location = new System.Drawing.Point(257, 100);
+            this.tb_name.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tb_name.Name = "tb_name";
-            this.tb_name.Size = new System.Drawing.Size(203, 26);
+            this.tb_name.Size = new System.Drawing.Size(269, 30);
             this.tb_name.TabIndex = 1;
             // 
             // Label3
             // 
             this.Label3.AutoSize = true;
             this.Label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label3.Location = new System.Drawing.Point(88, 18);
+            this.Label3.Location = new System.Drawing.Point(117, 22);
+            this.Label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label3.Name = "Label3";
-            this.Label3.Size = new System.Drawing.Size(409, 25);
+            this.Label3.Size = new System.Drawing.Size(509, 31);
             this.Label3.TabIndex = 2;
             this.Label3.Text = "Chào mừng đến ứng dụng quản lý nhà trọ";
             // 
@@ -166,10 +175,11 @@ namespace BTL_QuanLyNhaTro
             this.tabPage2.Controls.Add(this.tb_confirm_pass);
             this.tabPage2.Controls.Add(this.tb_pass_register);
             this.tabPage2.Controls.Add(this.tb_name_register);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(602, 276);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Size = new System.Drawing.Size(805, 343);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Đăng ký";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -180,18 +190,21 @@ namespace BTL_QuanLyNhaTro
             this.cb_phanquyen.Items.AddRange(new object[] {
             "Chủ trọ",
             "Người thuê"});
-            this.cb_phanquyen.Location = new System.Drawing.Point(198, 179);
+            this.cb_phanquyen.Location = new System.Drawing.Point(264, 220);
+            this.cb_phanquyen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cb_phanquyen.Name = "cb_phanquyen";
-            this.cb_phanquyen.Size = new System.Drawing.Size(121, 21);
+            this.cb_phanquyen.Size = new System.Drawing.Size(160, 24);
             this.cb_phanquyen.TabIndex = 9;
+            this.cb_phanquyen.SelectedIndexChanged += new System.EventHandler(this.cb_phanquyen_SelectedIndexChanged);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label7.Location = new System.Drawing.Point(134, 179);
+            this.label7.Location = new System.Drawing.Point(179, 220);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(58, 20);
+            this.label7.Size = new System.Drawing.Size(73, 25);
             this.label7.TabIndex = 20;
             this.label7.Text = "Bạn là:";
             // 
@@ -199,18 +212,20 @@ namespace BTL_QuanLyNhaTro
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(202, 14);
+            this.label5.Location = new System.Drawing.Point(269, 17);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(185, 25);
+            this.label5.Size = new System.Drawing.Size(231, 31);
             this.label5.TabIndex = 19;
             this.label5.Text = "Đăng ký tài khoản";
             // 
             // cb_show_re
             // 
             this.cb_show_re.AutoSize = true;
-            this.cb_show_re.Location = new System.Drawing.Point(198, 155);
+            this.cb_show_re.Location = new System.Drawing.Point(264, 191);
+            this.cb_show_re.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cb_show_re.Name = "cb_show_re";
-            this.cb_show_re.Size = new System.Drawing.Size(95, 17);
+            this.cb_show_re.Size = new System.Drawing.Size(114, 20);
             this.cb_show_re.TabIndex = 8;
             this.cb_show_re.Text = "Hiện mật khẩu";
             this.cb_show_re.UseVisualStyleBackColor = true;
@@ -219,9 +234,10 @@ namespace BTL_QuanLyNhaTro
             // btn_register
             // 
             this.btn_register.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_register.Location = new System.Drawing.Point(198, 216);
+            this.btn_register.Location = new System.Drawing.Point(264, 266);
+            this.btn_register.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_register.Name = "btn_register";
-            this.btn_register.Size = new System.Drawing.Size(203, 34);
+            this.btn_register.Size = new System.Drawing.Size(271, 42);
             this.btn_register.TabIndex = 10;
             this.btn_register.Text = "Đăng ký";
             this.btn_register.UseVisualStyleBackColor = true;
@@ -231,9 +247,10 @@ namespace BTL_QuanLyNhaTro
             // 
             this.Label8.AutoSize = true;
             this.Label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label8.Location = new System.Drawing.Point(52, 126);
+            this.Label8.Location = new System.Drawing.Point(69, 155);
+            this.Label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label8.Name = "Label8";
-            this.Label8.Size = new System.Drawing.Size(140, 20);
+            this.Label8.Size = new System.Drawing.Size(174, 25);
             this.Label8.TabIndex = 13;
             this.Label8.Text = "Nhập lại mật khẩu:";
             // 
@@ -241,9 +258,10 @@ namespace BTL_QuanLyNhaTro
             // 
             this.Label4.AutoSize = true;
             this.Label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label4.Location = new System.Drawing.Point(113, 90);
+            this.Label4.Location = new System.Drawing.Point(151, 111);
+            this.Label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label4.Name = "Label4";
-            this.Label4.Size = new System.Drawing.Size(79, 20);
+            this.Label4.Size = new System.Drawing.Size(99, 25);
             this.Label4.TabIndex = 14;
             this.Label4.Text = "Mật khẩu:";
             // 
@@ -251,56 +269,62 @@ namespace BTL_QuanLyNhaTro
             // 
             this.Label6.AutoSize = true;
             this.Label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label6.Location = new System.Drawing.Point(83, 58);
+            this.Label6.Location = new System.Drawing.Point(111, 71);
+            this.Label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label6.Name = "Label6";
-            this.Label6.Size = new System.Drawing.Size(109, 20);
+            this.Label6.Size = new System.Drawing.Size(137, 25);
             this.Label6.TabIndex = 16;
             this.Label6.Text = "Tên tài khoản:";
             // 
             // tb_confirm_pass
             // 
             this.tb_confirm_pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_confirm_pass.Location = new System.Drawing.Point(198, 123);
+            this.tb_confirm_pass.Location = new System.Drawing.Point(264, 151);
+            this.tb_confirm_pass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tb_confirm_pass.Name = "tb_confirm_pass";
-            this.tb_confirm_pass.Size = new System.Drawing.Size(203, 26);
+            this.tb_confirm_pass.Size = new System.Drawing.Size(269, 30);
             this.tb_confirm_pass.TabIndex = 7;
             this.tb_confirm_pass.UseSystemPasswordChar = true;
             // 
             // tb_pass_register
             // 
             this.tb_pass_register.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_pass_register.Location = new System.Drawing.Point(198, 87);
+            this.tb_pass_register.Location = new System.Drawing.Point(264, 107);
+            this.tb_pass_register.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tb_pass_register.Name = "tb_pass_register";
-            this.tb_pass_register.Size = new System.Drawing.Size(203, 26);
+            this.tb_pass_register.Size = new System.Drawing.Size(269, 30);
             this.tb_pass_register.TabIndex = 6;
             this.tb_pass_register.UseSystemPasswordChar = true;
             // 
             // tb_name_register
             // 
             this.tb_name_register.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_name_register.Location = new System.Drawing.Point(198, 55);
+            this.tb_name_register.Location = new System.Drawing.Point(264, 68);
+            this.tb_name_register.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tb_name_register.Name = "tb_name_register";
-            this.tb_name_register.Size = new System.Drawing.Size(203, 26);
+            this.tb_name_register.Size = new System.Drawing.Size(269, 30);
             this.tb_name_register.TabIndex = 5;
             // 
             // tabPage3
             // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(602, 276);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage3.Size = new System.Drawing.Size(805, 343);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Thông tin";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // WelcomeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(627, 321);
+            this.ClientSize = new System.Drawing.Size(836, 395);
             this.Controls.Add(this.tabControl1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "WelcomeForm";
-            this.Text = "Quản lý nhà chọ";
+            this.Text = "Quản lý phòng trọ";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

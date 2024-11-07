@@ -55,5 +55,17 @@ namespace BTL_QuanLyNhaTro
         {
 
         }
+
+        private void mApp_Manage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mApp_addRoom_Click_1(object sender, EventArgs e)
+        {
+            FormAddRoom f = new FormAddRoom();
+            f.Show();
+            //MessageBox.Show("Them Phong");
+        }
     }
 }

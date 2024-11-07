@@ -44,6 +44,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChuTro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChuTro.Designer.cs">
+      <DependentUpon>ChuTro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddRoom.Designer.cs">
+      <DependentUpon>FormAddRoom.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormDSHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +94,12 @@
     <Compile Include="FirstForm.Designer.cs">
       <DependentUpon>FirstForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="NguoiThue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NguoiThue.Designer.cs">
+      <DependentUpon>NguoiThue.cs</DependentUpon>
+    </Compile>
     <Compile Include="WelcomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +110,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FirstForm.resx">
       <DependentUpon>FirstForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddRoom.resx">
+      <DependentUpon>FormAddRoom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDSHoaDon.resx">
       <DependentUpon>FormDSHoaDon.cs</DependentUpon>

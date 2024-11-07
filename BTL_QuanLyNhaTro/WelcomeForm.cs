@@ -14,7 +14,7 @@ namespace BTL_QuanLyNhaTro
 {
     public partial class WelcomeForm : Form
     {
-
+        public static string connectionString = ConfigurationManager.ConnectionStrings["MyDatabaseConnection"].ConnectionString;
         public WelcomeForm()
         {
             InitializeComponent();
@@ -35,10 +35,7 @@ namespace BTL_QuanLyNhaTro
             cb.Checked = false;
         }
 
-        private void bt_re_Click(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void cb_show_CheckedChanged(object sender, EventArgs e)
         {
@@ -70,6 +67,76 @@ namespace BTL_QuanLyNhaTro
             string username = tb_name.Text;
             string password = tb_pass.Text;
             Login(username, password);
+        }
+        public void AddTaiKhoan()
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+
+                    using (SqlCommand cmd = new SqlCommand("sp_AddTaiKhoan", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        int maVaiTroIndex = cb_phanquyen.SelectedIndex + 1;
+
+                        // Add parameters for TenDangNhap, MatKhau, and MaVaiTro
+                        cmd.Parameters.AddWithValue("@TenDangNhap", tb_name_register.Text);
+                        cmd.Parameters.AddWithValue("@MatKhau", tb_pass_register.Text);
+                        cmd.Parameters.AddWithValue("@MaVaiTro", maVaiTroIndex);
+
+                        // Generate MaTaiKhoan based on the selected role
+                        string maTaiKhoanPrefix = maVaiTroIndex == 1 ? "NT_" :
+                                                 maVaiTroIndex == 2 ? "CT_" : "UN_";
+                        string maTaiKhoan = maTaiKhoanPrefix + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+                        // Add parameter for MaTaiKhoan
+                        cmd.Parameters.AddWithValue("@MaTaiKhoan", maTaiKhoan);
+
+                        // Execute the command
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        // Display message based on the result
+                        if (rowsAffected > 0)
+                        {
+                            ChuTro chutro = new ChuTro();
+                            NguoiThue nguoiThue = new NguoiThue();
+
+                            if( maVaiTroIndex == 1)
+                            {
+                                chutro.Show();
+                            }
+                            else if (maVaiTroIndex == 2)
+                            {
+                                nguoiThue.Show();
+                            }
+
+                            this.Hide();
+                        }
+
+                        else
+                        {
+                            MessageBox.Show("Failed to add account.");
+                        }
+                    }
+                    conn.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occurred: {ex.Message}");
+                }
+            }
+        }
+        private void bt_re_Click(object sender, EventArgs e)
+        {
+            AddTaiKhoan();
+        }
+
+        private void cb_phanquyen_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int selectedIndex = cb_phanquyen.SelectedIndex  +1;
+          
         }
     }
 }
