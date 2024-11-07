@@ -23,9 +23,6 @@ namespace BTL_QuanLyNhaTro
             AutoResizeDataGridView(dataGridView1);
             LoadHoaDonDetails();
             LoadDichVuList();
-            dataGridView1.ContextMenuStrip = contextMenuStrip1;
-            dataGridView1.CellMouseDown += dataGridView_CellMouseDown;
-            dataGridView1.Enabled = false;
         }
         private void LoadHoaDonDetails()
         {
@@ -43,12 +40,12 @@ namespace BTL_QuanLyNhaTro
             {
                 DataRow row = dt.Rows[0];
                 lb_NguoiLap.Text = row["NguoiLap"].ToString();
-                dTP_NgayLap.Value = Convert.ToDateTime(row["NgayLapHoaDon"]);
-                dTP_Han.Value = Convert.ToDateTime(row["HanHoaDon"]);
+                tB_ngayLap.Text = Convert.ToDateTime(row["NgayLapHoaDon"]).ToString("dd/MM/yyyy");
+                tB_ngayHetHan.Text = Convert.ToDateTime(row["HanHoaDon"]).ToString("dd/MM/yyyy");
                 tB_Phong.Text = row["TenPhong"].ToString();
                 tB_giaPhong.Text = row["GiaThue"].ToString(); ;
                 tB_tongTien.Text = row["SoTienThanhToan"].ToString();
-                cB_TrangThai.Text = row["TenTrangThai"].ToString(); // Có thể join để lấy tên trạng thái
+                tB_TrangThai.Text = row["TenTrangThai"].ToString(); // Có thể join để lấy tên trạng thái
                 setTenKhachThue(row["MaPhong"].ToString());
             }
         }
@@ -74,7 +71,7 @@ namespace BTL_QuanLyNhaTro
         private void LoadDichVuList()
         {
             string query = @"
-            SELECT hd_dv.MaHoaDonDichVu, dv.MaDichVu, dv.TenDichVu, dv.DonGia, hd_dv.SoLuong, dv.DonVi, hd_dv.ThanhTien
+            SELECT dv.MaDichVu, dv.TenDichVu, dv.DonGia, hd_dv.SoLuong, dv.DonVi, hd_dv.ThanhTien
             FROM HoaDon_DichVu hd_dv
             INNER JOIN DichVu dv ON hd_dv.MaDichVu = dv.MaDichVu
             WHERE hd_dv.MaHoaDon = @MaHoaDon";
@@ -82,46 +79,6 @@ namespace BTL_QuanLyNhaTro
             cmd.Parameters.AddWithValue("@MaHoaDon", maHoaDon);
             DataTable dt = GetData(cmd);
             dataGridView1.DataSource = dt;
-            dataGridView1.Columns["MaHoaDonDichVu"].Visible = false;
-            dataGridView1.Columns["MaDichVu"].Visible = false;
-        }
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            SqlCommand query = new SqlCommand("Select * from TrangThaiHoaDon");
-            dTP_Han.Enabled = checkBox1.Checked;
-            button1.Enabled = checkBox1.Checked;
-            tB_giaPhong.Enabled = checkBox1.Checked;
-            cB_TrangThai.Enabled = checkBox1.Checked;
-            dataGridView1.Enabled = checkBox1.Checked;
-            if (checkBox1.Checked == true)
-            {
-                LoadDataToComboBox(query, cB_TrangThai);
-            }
-        }
-
-        private void dataGridView_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Right && e.RowIndex >= 0 )
-            {
-                dataGridView1.ClearSelection();
-                dataGridView1.Rows[e.RowIndex].Selected = true;
-                // Chỉ đặt CurrentCell nếu cột đầu tiên không bị ẩn
-                foreach (DataGridViewCell cell in dataGridView1.Rows[e.RowIndex].Cells)
-                {
-                    if (cell.Visible)
-                    {
-                        dataGridView1.CurrentCell = cell; // Chọn một ô hiện không bị ẩn
-                        break;
-                    }
-                }
-            }
-        }
-
-        private void SuaDichVuToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            int selectedRowIndex = dataGridView1.CurrentRow.Index;
-            var maHoaDonDV = dataGridView1.Rows[selectedRowIndex].Cells["MaHoaDonDichVu"].Value.ToString();
-            MessageBox.Show("sửa hóa đơn dịch vụ: " + maHoaDonDV);
         }
     }
 }
