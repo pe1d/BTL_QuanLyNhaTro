@@ -168,6 +168,7 @@ namespace BTL_QuanLyNhaTro
             this.mApp_vContract_U.Name = "mApp_vContract_U";
             this.mApp_vContract_U.Size = new System.Drawing.Size(184, 22);
             this.mApp_vContract_U.Text = "Danh sách hợp đồng";
+            this.mApp_vContract_U.Click += new System.EventHandler(this.mApp_vContract_U_Click);
             // 
             // mApp_aContract
             // 
@@ -260,14 +261,16 @@ namespace BTL_QuanLyNhaTro
             // mApp_earnDetail
             // 
             this.mApp_earnDetail.Name = "mApp_earnDetail";
-            this.mApp_earnDetail.Size = new System.Drawing.Size(171, 22);
+            this.mApp_earnDetail.Size = new System.Drawing.Size(180, 22);
             this.mApp_earnDetail.Text = "Báo cáo chi tiết";
+            this.mApp_earnDetail.Click += new System.EventHandler(this.mApp_earnDetail_Click);
             // 
             // mApp_earnGeneral
             // 
             this.mApp_earnGeneral.Name = "mApp_earnGeneral";
-            this.mApp_earnGeneral.Size = new System.Drawing.Size(171, 22);
+            this.mApp_earnGeneral.Size = new System.Drawing.Size(180, 22);
             this.mApp_earnGeneral.Text = "Báo cáo tông quát";
+            this.mApp_earnGeneral.Click += new System.EventHandler(this.mApp_earnGeneral_Click);
             // 
             // mApp_PayBill
             // 

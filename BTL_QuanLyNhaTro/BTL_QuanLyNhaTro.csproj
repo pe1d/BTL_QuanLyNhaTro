@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormDanhSachHopDong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDanhSachHopDong.Designer.cs">
+      <DependentUpon>FormDanhSachHopDong.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormThanhToanHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,12 @@
     <Compile Include="FormXemChiTietHoaDon.Designer.cs">
       <DependentUpon>FormXemChiTietHoaDon.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormXemChiTietHopDong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormXemChiTietHopDong.Designer.cs">
+      <DependentUpon>FormXemChiTietHopDong.cs</DependentUpon>
+    </Compile>
     <Compile Include="FunctionAll.cs" />
     <Compile Include="AuthenticationService.cs" />
     <Compile Include="FirstForm.cs">
@@ -123,6 +135,9 @@
     <EmbeddedResource Include="FirstForm.resx">
       <DependentUpon>FirstForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormDanhSachHopDong.resx">
+      <DependentUpon>FormDanhSachHopDong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormThanhToanHoaDon.resx">
       <DependentUpon>FormThanhToanHoaDon.cs</DependentUpon>
     </EmbeddedResource>
@@ -137,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormXemChiTietHoaDon.resx">
       <DependentUpon>FormXemChiTietHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormXemChiTietHopDong.resx">
+      <DependentUpon>FormXemChiTietHopDong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThanhToanHoaDonForm.resx">
       <DependentUpon>ThanhToanHoaDonForm.cs</DependentUpon>

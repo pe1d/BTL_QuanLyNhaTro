@@ -50,8 +50,8 @@ namespace BTL_QuanLyNhaTro
             this.chB_All = new System.Windows.Forms.CheckBox();
             this.btn_Loc = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.sửaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.xóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SuaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.xoaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -152,12 +152,13 @@ namespace BTL_QuanLyNhaTro
             // ChB_HpDongHetHan
             // 
             this.ChB_HpDongHetHan.AutoSize = true;
-            this.ChB_HpDongHetHan.Location = new System.Drawing.Point(564, 122);
+            this.ChB_HpDongHetHan.Location = new System.Drawing.Point(210, 197);
             this.ChB_HpDongHetHan.Name = "ChB_HpDongHetHan";
             this.ChB_HpDongHetHan.Size = new System.Drawing.Size(129, 17);
             this.ChB_HpDongHetHan.TabIndex = 11;
             this.ChB_HpDongHetHan.Text = "Hợp đồng đã hết hạn";
             this.ChB_HpDongHetHan.UseVisualStyleBackColor = true;
+            this.ChB_HpDongHetHan.CheckedChanged += new System.EventHandler(this.ChB_HpDongHetHan_CheckedChanged);
             // 
             // label7
             // 
@@ -183,6 +184,7 @@ namespace BTL_QuanLyNhaTro
             this.tB_GiaTriHopDongFrom.Name = "tB_GiaTriHopDongFrom";
             this.tB_GiaTriHopDongFrom.Size = new System.Drawing.Size(200, 20);
             this.tB_GiaTriHopDongFrom.TabIndex = 14;
+            this.tB_GiaTriHopDongFrom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tB_GiaTriHopDong_KeyPress);
             // 
             // label9
             // 
@@ -199,6 +201,7 @@ namespace BTL_QuanLyNhaTro
             this.tB_GiaTriHopDongTo.Name = "tB_GiaTriHopDongTo";
             this.tB_GiaTriHopDongTo.Size = new System.Drawing.Size(200, 20);
             this.tB_GiaTriHopDongTo.TabIndex = 16;
+            this.tB_GiaTriHopDongTo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tB_GiaTriHopDong_KeyPress);
             // 
             // chB_All
             // 
@@ -209,6 +212,7 @@ namespace BTL_QuanLyNhaTro
             this.chB_All.TabIndex = 17;
             this.chB_All.Text = "Tất cả hợp đồng";
             this.chB_All.UseVisualStyleBackColor = true;
+            this.chB_All.CheckedChanged += new System.EventHandler(this.chB_All_CheckedChanged);
             // 
             // btn_Loc
             // 
@@ -218,26 +222,29 @@ namespace BTL_QuanLyNhaTro
             this.btn_Loc.TabIndex = 18;
             this.btn_Loc.Text = "Lọc";
             this.btn_Loc.UseVisualStyleBackColor = true;
+            this.btn_Loc.Click += new System.EventHandler(this.btn_Loc_Click);
             // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sửaToolStripMenuItem,
-            this.xóaToolStripMenuItem});
+            this.SuaToolStripMenuItem,
+            this.xoaToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(95, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 70);
             // 
-            // sửaToolStripMenuItem
+            // SuaToolStripMenuItem
             // 
-            this.sửaToolStripMenuItem.Name = "sửaToolStripMenuItem";
-            this.sửaToolStripMenuItem.Size = new System.Drawing.Size(94, 22);
-            this.sửaToolStripMenuItem.Text = "Sửa";
+            this.SuaToolStripMenuItem.Name = "SuaToolStripMenuItem";
+            this.SuaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.SuaToolStripMenuItem.Text = "Sửa";
+            this.SuaToolStripMenuItem.Click += new System.EventHandler(this.SuaToolStripMenuItem_Click);
             // 
-            // xóaToolStripMenuItem
+            // xoaToolStripMenuItem
             // 
-            this.xóaToolStripMenuItem.Name = "xóaToolStripMenuItem";
-            this.xóaToolStripMenuItem.Size = new System.Drawing.Size(94, 22);
-            this.xóaToolStripMenuItem.Text = "Xóa";
+            this.xoaToolStripMenuItem.Name = "xoaToolStripMenuItem";
+            this.xoaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.xoaToolStripMenuItem.Text = "Xóa";
+            this.xoaToolStripMenuItem.Click += new System.EventHandler(this.xoaToolStripMenuItem_Click);
             // 
             // FormDanhSachHopDong
             // 
@@ -294,7 +301,7 @@ namespace BTL_QuanLyNhaTro
         private System.Windows.Forms.CheckBox chB_All;
         private System.Windows.Forms.Button btn_Loc;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem sửaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem xóaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem SuaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem xoaToolStripMenuItem;
     }
 }

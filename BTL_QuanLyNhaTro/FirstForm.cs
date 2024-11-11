@@ -73,5 +73,21 @@ namespace BTL_QuanLyNhaTro
             FormThemHopDong f = new FormThemHopDong();
             f.Show();
         }
+
+        private void mApp_vContract_U_Click(object sender, EventArgs e)
+        {
+            FormDanhSachHopDong f = new FormDanhSachHopDong();
+            f.Show();
+        }
+
+        private void mApp_earnDetail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mApp_earnGeneral_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
