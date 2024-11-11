@@ -120,6 +120,44 @@ namespace BTL_QuanLyNhaTro
                 dataGridView1.DataSource = dt;
                 return;
             }
+            string filterCondition = "select * from HopDong where 1=1";
+            if (cB_ChuTro.SelectedIndex >= 0)
+            {
+                filterCondition += $" AND MaChuTro = '{cB_ChuTro.SelectedValue}'";
+            }
+            if (cB_NguoiThue.SelectedIndex >= 0)
+            {
+                filterCondition += $" AND MaNguoiThue = '{cB_NguoiThue.SelectedValue}'";
+            }
+            if (date_NgayHetHanFrom.Value != null && date_NgayHetHanTo.Value != null)
+            {
+                if (date_NgayHetHanTo.Value >= date_NgayHetHanFrom.Value)
+                {
+                    filterCondition += $" AND NgayKetThuc >= '{date_NgayHetHanFrom.Value.ToString("yyyy-MM-dd")}' AND NgayKetThuc <= '{date_NgayHetHanTo.Value.ToString("yyyy-MM-dd")}'";
+                }
+                else
+                {
+                    MessageBox.Show("Ngày hết hạn đến phải lớn hơn hoặc bằng từ");
+                    return;
+                }
+            }
+            if (!string.IsNullOrWhiteSpace(tB_GiaTriHopDongFrom.Text) && !string.IsNullOrWhiteSpace(tB_GiaTriHopDongTo.Text))
+            {
+                if (decimal.TryParse(tB_GiaTriHopDongFrom.Text, out decimal fromValue) && decimal.TryParse(tB_GiaTriHopDongTo.Text, out decimal toValue))
+                {
+                    filterCondition += $" AND TongTienThue >= {fromValue} AND TongTienThue <= {toValue}";
+                }
+            }
+            SqlCommand cmdFilter = new SqlCommand(filterCondition);
+            DataTable dtFilter = GetData(cmdFilter);
+            if (HasData(dtFilter))
+            {
+                dataGridView1.DataSource = dtFilter;
+            }
+            else
+            {
+                MessageBox.Show("Không có dữ liệu!");
+            }
         }
 
         private void SuaToolStripMenuItem_Click(object sender, EventArgs e)

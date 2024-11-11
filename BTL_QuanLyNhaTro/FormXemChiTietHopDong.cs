@@ -43,5 +43,11 @@ namespace BTL_QuanLyNhaTro
                 date_KetThuc.Value = DateTime.Parse(row["NgayKetThuc"].ToString());
             }
         }
+
+        private void btn_GiaHan_Click(object sender, EventArgs e)
+        {
+            FormGiaHanHopDong f = new FormGiaHanHopDong(maHopDong);
+            f.ShowDialog();
+        }
     }
 }

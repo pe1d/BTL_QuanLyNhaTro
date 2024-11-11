@@ -63,6 +63,7 @@ namespace BTL_QuanLyNhaTro
             // 
             // tb_MaHopDOng
             // 
+            this.tb_MaHopDOng.Enabled = false;
             this.tb_MaHopDOng.Location = new System.Drawing.Point(29, 78);
             this.tb_MaHopDOng.Name = "tb_MaHopDOng";
             this.tb_MaHopDOng.Size = new System.Drawing.Size(335, 20);
@@ -79,6 +80,7 @@ namespace BTL_QuanLyNhaTro
             // 
             // tB_TenChuTro
             // 
+            this.tB_TenChuTro.Enabled = false;
             this.tB_TenChuTro.Location = new System.Drawing.Point(29, 122);
             this.tB_TenChuTro.Name = "tB_TenChuTro";
             this.tB_TenChuTro.Size = new System.Drawing.Size(162, 20);
@@ -95,6 +97,7 @@ namespace BTL_QuanLyNhaTro
             // 
             // tB_TenNguoiThue
             // 
+            this.tB_TenNguoiThue.Enabled = false;
             this.tB_TenNguoiThue.Location = new System.Drawing.Point(202, 122);
             this.tB_TenNguoiThue.Name = "tB_TenNguoiThue";
             this.tB_TenNguoiThue.Size = new System.Drawing.Size(162, 20);
@@ -111,6 +114,7 @@ namespace BTL_QuanLyNhaTro
             // 
             // tB_TenPhong
             // 
+            this.tB_TenPhong.Enabled = false;
             this.tB_TenPhong.Location = new System.Drawing.Point(29, 161);
             this.tB_TenPhong.Name = "tB_TenPhong";
             this.tB_TenPhong.Size = new System.Drawing.Size(162, 20);
@@ -127,6 +131,7 @@ namespace BTL_QuanLyNhaTro
             // 
             // tB_GiaPhong
             // 
+            this.tB_GiaPhong.Enabled = false;
             this.tB_GiaPhong.Location = new System.Drawing.Point(202, 161);
             this.tB_GiaPhong.Name = "tB_GiaPhong";
             this.tB_GiaPhong.Size = new System.Drawing.Size(162, 20);
@@ -153,6 +158,7 @@ namespace BTL_QuanLyNhaTro
             // 
             // date_Lap
             // 
+            this.date_Lap.Enabled = false;
             this.date_Lap.Location = new System.Drawing.Point(29, 201);
             this.date_Lap.Name = "date_Lap";
             this.date_Lap.Size = new System.Drawing.Size(335, 20);
@@ -178,6 +184,7 @@ namespace BTL_QuanLyNhaTro
             // 
             // date_BatDau
             // 
+            this.date_BatDau.Enabled = false;
             this.date_BatDau.Location = new System.Drawing.Point(29, 245);
             this.date_BatDau.Name = "date_BatDau";
             this.date_BatDau.Size = new System.Drawing.Size(335, 20);
@@ -185,6 +192,7 @@ namespace BTL_QuanLyNhaTro
             // 
             // date_KetThuc
             // 
+            this.date_KetThuc.Enabled = false;
             this.date_KetThuc.Location = new System.Drawing.Point(29, 289);
             this.date_KetThuc.Name = "date_KetThuc";
             this.date_KetThuc.Size = new System.Drawing.Size(335, 20);
@@ -217,6 +225,7 @@ namespace BTL_QuanLyNhaTro
             this.btn_GiaHan.TabIndex = 19;
             this.btn_GiaHan.Text = "Gia hạn";
             this.btn_GiaHan.UseVisualStyleBackColor = true;
+            this.btn_GiaHan.Click += new System.EventHandler(this.btn_GiaHan_Click);
             // 
             // btn_Xoa
             // 

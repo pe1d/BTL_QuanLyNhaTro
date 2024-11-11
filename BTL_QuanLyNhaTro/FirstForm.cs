@@ -53,7 +53,8 @@ namespace BTL_QuanLyNhaTro
 
         private void mApp_vRoom_Click(object sender, EventArgs e)
         {
-
+            //FormShowListRooms f = new FormShowListRooms();
+            //f.Show();
         }
 
         private void mApp_PayBill_Click(object sender, EventArgs e)
@@ -74,6 +75,11 @@ namespace BTL_QuanLyNhaTro
             f.Show();
         }
 
+        private void mApp_addRoom_Click(object sender, EventArgs e)
+        {
+            //FormAddRoom f = new FormAddRoom();
+           // f.Show();
+        }
         private void mApp_vContract_U_Click(object sender, EventArgs e)
         {
             FormDanhSachHopDong f = new FormDanhSachHopDong();
@@ -88,6 +94,17 @@ namespace BTL_QuanLyNhaTro
         private void mApp_earnGeneral_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void danhSachChuTroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void themChuTroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormThemChuTro f = new FormThemChuTro();
+            f.Show();
         }
     }
 }

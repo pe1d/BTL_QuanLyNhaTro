@@ -50,6 +50,12 @@
     <Compile Include="FormDanhSachHopDong.Designer.cs">
       <DependentUpon>FormDanhSachHopDong.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormGiaHanHopDong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGiaHanHopDong.Designer.cs">
+      <DependentUpon>FormGiaHanHopDong.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormThanhToanHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,12 @@
     </Compile>
     <Compile Include="FormSuaHoaDon.Designer.cs">
       <DependentUpon>FormSuaHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormThemChuTro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThemChuTro.Designer.cs">
+      <DependentUpon>FormThemChuTro.cs</DependentUpon>
     </Compile>
     <Compile Include="FormThemHoaDon.cs">
       <SubType>Form</SubType>
@@ -138,6 +150,9 @@
     <EmbeddedResource Include="FormDanhSachHopDong.resx">
       <DependentUpon>FormDanhSachHopDong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormGiaHanHopDong.resx">
+      <DependentUpon>FormGiaHanHopDong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormThanhToanHoaDon.resx">
       <DependentUpon>FormThanhToanHoaDon.cs</DependentUpon>
     </EmbeddedResource>
@@ -146,6 +161,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormSuaHoaDon.resx">
       <DependentUpon>FormSuaHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormThemChuTro.resx">
+      <DependentUpon>FormThemChuTro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormThemHoaDon.resx">
       <DependentUpon>FormThemHoaDon.cs</DependentUpon>

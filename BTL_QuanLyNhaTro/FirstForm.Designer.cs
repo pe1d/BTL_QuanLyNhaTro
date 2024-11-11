@@ -51,8 +51,8 @@ namespace BTL_QuanLyNhaTro
             this.mApp_aBill = new System.Windows.Forms.ToolStripMenuItem();
             this.mApp_vBill = new System.Windows.Forms.ToolStripMenuItem();
             this.mApp_mChuTro = new System.Windows.Forms.ToolStripMenuItem();
-            this.thêmChủTrọToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.danhSáchChủTrọToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.themChuTroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.danhSachChuTroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mApp_vRevenue_R = new System.Windows.Forms.ToolStripMenuItem();
             this.mApp_earnDetail = new System.Windows.Forms.ToolStripMenuItem();
             this.mApp_earnGeneral = new System.Windows.Forms.ToolStripMenuItem();
@@ -231,23 +231,25 @@ namespace BTL_QuanLyNhaTro
             // mApp_mChuTro
             // 
             this.mApp_mChuTro.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.thêmChủTrọToolStripMenuItem,
-            this.danhSáchChủTrọToolStripMenuItem});
+            this.themChuTroToolStripMenuItem,
+            this.danhSachChuTroToolStripMenuItem});
             this.mApp_mChuTro.Name = "mApp_mChuTro";
             this.mApp_mChuTro.Size = new System.Drawing.Size(180, 22);
             this.mApp_mChuTro.Text = "Quản lý chủ trọ";
             // 
-            // thêmChủTrọToolStripMenuItem
+            // themChuTroToolStripMenuItem
             // 
-            this.thêmChủTrọToolStripMenuItem.Name = "thêmChủTrọToolStripMenuItem";
-            this.thêmChủTrọToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.thêmChủTrọToolStripMenuItem.Text = "Thêm chủ trọ";
+            this.themChuTroToolStripMenuItem.Name = "themChuTroToolStripMenuItem";
+            this.themChuTroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.themChuTroToolStripMenuItem.Text = "Thêm chủ trọ";
+            this.themChuTroToolStripMenuItem.Click += new System.EventHandler(this.themChuTroToolStripMenuItem_Click);
             // 
-            // danhSáchChủTrọToolStripMenuItem
+            // danhSachChuTroToolStripMenuItem
             // 
-            this.danhSáchChủTrọToolStripMenuItem.Name = "danhSáchChủTrọToolStripMenuItem";
-            this.danhSáchChủTrọToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.danhSáchChủTrọToolStripMenuItem.Text = "Danh sách chủ trọ";
+            this.danhSachChuTroToolStripMenuItem.Name = "danhSachChuTroToolStripMenuItem";
+            this.danhSachChuTroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.danhSachChuTroToolStripMenuItem.Text = "Danh sách chủ trọ";
+            this.danhSachChuTroToolStripMenuItem.Click += new System.EventHandler(this.danhSachChuTroToolStripMenuItem_Click);
             // 
             // mApp_vRevenue_R
             // 
@@ -261,14 +263,14 @@ namespace BTL_QuanLyNhaTro
             // mApp_earnDetail
             // 
             this.mApp_earnDetail.Name = "mApp_earnDetail";
-            this.mApp_earnDetail.Size = new System.Drawing.Size(180, 22);
+            this.mApp_earnDetail.Size = new System.Drawing.Size(171, 22);
             this.mApp_earnDetail.Text = "Báo cáo chi tiết";
             this.mApp_earnDetail.Click += new System.EventHandler(this.mApp_earnDetail_Click);
             // 
             // mApp_earnGeneral
             // 
             this.mApp_earnGeneral.Name = "mApp_earnGeneral";
-            this.mApp_earnGeneral.Size = new System.Drawing.Size(180, 22);
+            this.mApp_earnGeneral.Size = new System.Drawing.Size(171, 22);
             this.mApp_earnGeneral.Text = "Báo cáo tông quát";
             this.mApp_earnGeneral.Click += new System.EventHandler(this.mApp_earnGeneral_Click);
             // 
@@ -344,7 +346,7 @@ namespace BTL_QuanLyNhaTro
         private System.Windows.Forms.ToolStripMenuItem mApp_earnGeneral;
         private System.Windows.Forms.ToolStripMenuItem thToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mApp_mChuTro;
-        private System.Windows.Forms.ToolStripMenuItem thêmChủTrọToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem danhSáchChủTrọToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem themChuTroToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem danhSachChuTroToolStripMenuItem;
     }
 }
