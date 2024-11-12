@@ -47,6 +47,12 @@ namespace BTL_QuanLyNhaTro
                 MessageBox.Show("Chủ trọ phải từ 18 tuổi trở lên.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            SqlCommand cmdCheck = new SqlCommand("Select Count(*) from TaiKhoan where TenDangNhap = @tenDangNhap");
+            cmdCheck.Parameters.AddWithValue("@tenDangNhap", taiKhoan);
+            if (CheckDK(cmdCheck, "Tài khoản đã tồn tại. Vui lòng chọn tên đăng nhập khác!","have"))
+            {
+                return;
+            }
             string queryCT = @"INSERT INTO ChuTro VALUES (@MaChuTro, @TenChuTro, @CMND, @SoDienThoai, @GioiTinh, @NgaySinh, @SoTaiKhoan, @NganHang)";
             string queryTK = @"INSERT INTO TaiKhoan VALUES (@MaTK, @TenDangNhap, @MatKhau, '2')";
             SqlCommand cmd = new SqlCommand(queryCT);
@@ -96,6 +102,11 @@ namespace BTL_QuanLyNhaTro
             {
                 cB_NganHang.SelectedIndex = 0; // Select the first item by default
             }
+        }
+
+        private void tb_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            tb_NumberInput_KeyPress(sender, e);
         }
     }
 }

@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using static BTL_QuanLyNhaTro.AuthenticationService;
+using static BTL_QuanLyNhaTro.FunctionAll;
 
 namespace BTL_QuanLyNhaTro
 {
@@ -15,6 +17,39 @@ namespace BTL_QuanLyNhaTro
         {
             InitializeComponent();
             ApplyRolePermissions(User.RoleID);
+            CheckTT();
+        }
+        private void CheckTT()
+        {
+            if (User.RoleID == 1)
+            {
+                SqlCommand cmd = new SqlCommand("select Count(*) from NguoiThue Where MaNguoiThue = @Ma");
+                cmd.Parameters.AddWithValue("@Ma", User.UserID);
+                if(CheckDK(cmd, "Chưa có thông tin người dùng vui lòng nhập thông tin!","nohave"))
+                {
+                    NguoiThue nt = new NguoiThue();
+                    nt.ShowDialog();
+                }
+                else
+                {
+                    return;
+                }            
+            }
+            if (User.RoleID == 2)
+            {
+                SqlCommand cmd = new SqlCommand("select Count(*) from ChuTro Where MaChuTro = @Ma");
+                cmd.Parameters.AddWithValue("@Ma", User.UserID);
+                if (CheckDK(cmd, "Chưa có thông tin người dùng vui lòng nhập thông tin!","nohave"))
+                {
+                    ChuTro ct = new ChuTro();
+                    ct.ShowDialog();
+                    
+                }
+                else
+                {
+                    return;
+                }
+            }
         }
         private void ApplyRolePermissions(int roleID)
         {
@@ -53,8 +88,8 @@ namespace BTL_QuanLyNhaTro
 
         private void mApp_vRoom_Click(object sender, EventArgs e)
         {
-            //FormShowListRooms f = new FormShowListRooms();
-            //f.Show();
+            FormShowListRooms f = new FormShowListRooms();
+            f.Show();
         }
 
         private void mApp_PayBill_Click(object sender, EventArgs e)
@@ -77,25 +112,14 @@ namespace BTL_QuanLyNhaTro
 
         private void mApp_addRoom_Click(object sender, EventArgs e)
         {
-            //FormAddRoom f = new FormAddRoom();
-           // f.Show();
+            FormAddRoom f = new FormAddRoom();
+            f.Show();
         }
         private void mApp_vContract_U_Click(object sender, EventArgs e)
         {
             FormDanhSachHopDong f = new FormDanhSachHopDong();
             f.Show();
         }
-
-        private void mApp_earnDetail_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void mApp_earnGeneral_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void danhSachChuTroToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -104,6 +128,18 @@ namespace BTL_QuanLyNhaTro
         private void themChuTroToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormThemChuTro f = new FormThemChuTro();
+            f.Show();
+        }
+
+        private void mApp_addRoom_Click_1(object sender, EventArgs e)
+        {
+            FormAddRoom f = new FormAddRoom();
+            f.Show();
+        }
+
+        private void mApp_vRevenue_R_Click(object sender, EventArgs e)
+        {
+            FormBaoCaoDoanhThu f = new FormBaoCaoDoanhThu();
             f.Show();
         }
     }

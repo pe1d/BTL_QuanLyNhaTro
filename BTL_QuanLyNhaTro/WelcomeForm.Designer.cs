@@ -177,9 +177,6 @@ namespace BTL_QuanLyNhaTro
             // cb_phanquyen
             // 
             this.cb_phanquyen.FormattingEnabled = true;
-            this.cb_phanquyen.Items.AddRange(new object[] {
-            "Chủ trọ",
-            "Người thuê"});
             this.cb_phanquyen.Location = new System.Drawing.Point(198, 179);
             this.cb_phanquyen.Name = "cb_phanquyen";
             this.cb_phanquyen.Size = new System.Drawing.Size(121, 21);

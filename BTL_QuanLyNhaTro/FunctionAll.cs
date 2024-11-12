@@ -61,5 +61,46 @@ namespace BTL_QuanLyNhaTro
             dgv.AutoResizeColumns();
             dgv.AutoResizeRows();
         }
+        public static Boolean CheckDK(SqlCommand cmd, string messageFail, string type)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    cmd.Connection = conn;
+                    int count = (int)cmd.ExecuteScalar();
+                    if(type.ToUpper() == "HAVE")
+                    {
+                        if (count > 0)
+                        {
+                            MessageBox.Show(messageFail, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return true;
+                        }
+                        return false;
+                    }
+                    if (type.ToUpper() == "NOHAVE")
+                    {
+                        if (count > 0)
+                        {
+                            return false;
+                        }
+                        MessageBox.Show(messageFail, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return true;
+                    }
+
+                    return false;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Đã xảy ra lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return true;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
     }
 }

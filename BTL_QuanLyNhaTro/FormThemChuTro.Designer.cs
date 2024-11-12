@@ -127,6 +127,7 @@ namespace BTL_QuanLyNhaTro
             this.tb_CanCuoc.Name = "tb_CanCuoc";
             this.tb_CanCuoc.Size = new System.Drawing.Size(339, 20);
             this.tb_CanCuoc.TabIndex = 8;
+            this.tb_CanCuoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_KeyPress);
             // 
             // label6
             // 
@@ -143,6 +144,7 @@ namespace BTL_QuanLyNhaTro
             this.tb_SoDienThoai.Name = "tb_SoDienThoai";
             this.tb_SoDienThoai.Size = new System.Drawing.Size(339, 20);
             this.tb_SoDienThoai.TabIndex = 10;
+            this.tb_SoDienThoai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_KeyPress);
             // 
             // rB_Nam
             // 
@@ -214,6 +216,7 @@ namespace BTL_QuanLyNhaTro
             this.tb_SoTaiKhoan.Name = "tb_SoTaiKhoan";
             this.tb_SoTaiKhoan.Size = new System.Drawing.Size(199, 20);
             this.tb_SoTaiKhoan.TabIndex = 18;
+            this.tb_SoTaiKhoan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_KeyPress);
             // 
             // label10
             // 
