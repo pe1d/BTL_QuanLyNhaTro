@@ -52,6 +52,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormAddRoom.Designer.cs" />
+    <Compile Include="FormBaoCaoDoanhThuChiTiet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBaoCaoDoanhThuChiTiet.Designer.cs">
+      <DependentUpon>FormBaoCaoDoanhThuChiTiet.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormDanhSachHopDong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +173,9 @@
     <EmbeddedResource Include="FormAddRoom.resx" />
     <EmbeddedResource Include="FormBaoCaoDoanhThu.resx">
       <DependentUpon>FormBaoCaoDoanhThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBaoCaoDoanhThuChiTiet.resx">
+      <DependentUpon>FormBaoCaoDoanhThuChiTiet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDanhSachHopDong.resx">
       <DependentUpon>FormDanhSachHopDong.cs</DependentUpon>

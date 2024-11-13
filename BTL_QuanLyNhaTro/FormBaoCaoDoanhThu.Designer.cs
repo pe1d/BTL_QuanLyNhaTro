@@ -37,6 +37,7 @@ namespace BTL_QuanLyNhaTro
             this.cB_Thang = new System.Windows.Forms.ComboBox();
             this.cB_Nam = new System.Windows.Forms.ComboBox();
             this.btn_BaoCao = new System.Windows.Forms.Button();
+            this.chB_All = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -102,18 +103,31 @@ namespace BTL_QuanLyNhaTro
             // 
             // btn_BaoCao
             // 
-            this.btn_BaoCao.Location = new System.Drawing.Point(27, 137);
+            this.btn_BaoCao.Location = new System.Drawing.Point(27, 157);
             this.btn_BaoCao.Name = "btn_BaoCao";
             this.btn_BaoCao.Size = new System.Drawing.Size(75, 23);
             this.btn_BaoCao.TabIndex = 7;
             this.btn_BaoCao.Text = "Báo cáo";
             this.btn_BaoCao.UseVisualStyleBackColor = true;
+            this.btn_BaoCao.Click += new System.EventHandler(this.btn_BaoCao_Click);
+            // 
+            // chB_All
+            // 
+            this.chB_All.AutoSize = true;
+            this.chB_All.Location = new System.Drawing.Point(27, 138);
+            this.chB_All.Name = "chB_All";
+            this.chB_All.Size = new System.Drawing.Size(57, 17);
+            this.chB_All.TabIndex = 8;
+            this.chB_All.Text = "Tất cả";
+            this.chB_All.UseVisualStyleBackColor = true;
+            this.chB_All.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // FormBaoCaoDoanhThu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(298, 192);
+            this.Controls.Add(this.chB_All);
             this.Controls.Add(this.btn_BaoCao);
             this.Controls.Add(this.cB_Nam);
             this.Controls.Add(this.cB_Thang);
@@ -139,5 +153,6 @@ namespace BTL_QuanLyNhaTro
         private System.Windows.Forms.ComboBox cB_Thang;
         private System.Windows.Forms.ComboBox cB_Nam;
         private System.Windows.Forms.Button btn_BaoCao;
+        private System.Windows.Forms.CheckBox chB_All;
     }
 }
