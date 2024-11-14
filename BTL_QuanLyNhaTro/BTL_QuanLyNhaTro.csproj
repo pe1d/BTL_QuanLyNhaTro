@@ -35,19 +35,40 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaoCaoDoanhThu.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaoCaoDoanhThu.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ChuTro.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ChuTro.Designer.cs" />
+    <Compile Include="DataSet1.cs">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FormAddRoom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +90,12 @@
     </Compile>
     <Compile Include="FormGiaHanHopDong.Designer.cs">
       <DependentUpon>FormGiaHanHopDong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormReportBaoCao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReportBaoCao.Designer.cs">
+      <DependentUpon>FormReportBaoCao.cs</DependentUpon>
     </Compile>
     <Compile Include="FormShowListRooms.cs">
       <SubType>Form</SubType>
@@ -122,6 +149,12 @@
     <Compile Include="FormThemHopDong1.Designer.cs">
       <DependentUpon>FormThemHopDong1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormThemNguoiThue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThemNguoiThue.Designer.cs">
+      <DependentUpon>FormThemNguoiThue.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormThuePhongTro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +199,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BaoCaoDoanhThu.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BaoCaoDoanhThu.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChuTro.resx" />
     <EmbeddedResource Include="FirstForm.resx">
       <DependentUpon>FirstForm.cs</DependentUpon>
@@ -183,6 +220,9 @@
     <EmbeddedResource Include="FormGiaHanHopDong.resx">
       <DependentUpon>FormGiaHanHopDong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormReportBaoCao.resx">
+      <DependentUpon>FormReportBaoCao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormShowListRooms.resx" />
     <EmbeddedResource Include="FormThanhToanHoaDon.resx">
       <DependentUpon>FormThanhToanHoaDon.cs</DependentUpon>
@@ -198,6 +238,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormThemHoaDon.resx">
       <DependentUpon>FormThemHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormThemNguoiThue.resx">
+      <DependentUpon>FormThemNguoiThue.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormXemChiTietHoaDon.resx">
       <DependentUpon>FormXemChiTietHoaDon.cs</DependentUpon>
@@ -223,6 +266,17 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="App.config" />
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -238,6 +292,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Untitled1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

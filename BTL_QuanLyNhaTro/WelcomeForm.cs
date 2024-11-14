@@ -37,68 +37,33 @@ namespace BTL_QuanLyNhaTro
         }
         public void AddTaiKhoan()
         {
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            int selectedIndex = 0;
+            if (!string.IsNullOrEmpty(cb_phanquyen.SelectedValue.ToString()))
             {
-                try
-                {
-                    conn.Open();
-
-                    using (SqlCommand cmd = new SqlCommand("Insert into TaiKhoan values (@MaTaiKhoan,@TenDangNhap,@MatKhau,@MaVaiTro)", conn))
-                    {
-                        int selectedIndex = 0;
-                        if (!string.IsNullOrEmpty(cb_phanquyen.SelectedValue.ToString()))
-                        {
-                            selectedIndex = int.Parse(cb_phanquyen.SelectedValue.ToString());
-                        }
-                        else
-                        {
-                            MessageBox.Show("Vui lòng chọn vai trò của bạn!");
-                            return;
-                        }
-                        SqlCommand cmdCheck = new SqlCommand("Select Count(*) from TaiKhoan where TenDangNhap = @tenDangNhap");
-                        cmdCheck.Parameters.AddWithValue("@tenDangNhap", tb_name_register.Text);
-                        if (CheckDK(cmdCheck, "Tài khoản đã tồn tại. Vui lòng chọn tên đăng nhập khác!","HAVE"))
-                        {
-                            return;
-                        }
-                        string maTaiKhoanPrefix = selectedIndex == 1 ? "NT_" :
-                                                      selectedIndex == 2 ? "CT_" : "UN_";
-                        string maTaiKhoan = maTaiKhoanPrefix + DateTime.Now.ToString("yyyyMMdd-HHmmss");
-                        cmd.Parameters.AddWithValue("@MaTaiKhoan", maTaiKhoan);
-                        cmd.Parameters.AddWithValue("@TenDangNhap", tb_name_register.Text);
-                        cmd.Parameters.AddWithValue("@MatKhau", tb_pass_register.Text);
-                        cmd.Parameters.AddWithValue("@MaVaiTro", selectedIndex);
-                        
-                        int rowsAffected = cmd.ExecuteNonQuery();
-                        if (rowsAffected > 0)
-                        {
-                            ChuTro chutro = new ChuTro();
-                            NguoiThue nguoiThue = new NguoiThue();
-
-                            if (selectedIndex == 2)
-                            {
-                                chutro.Show();
-                            }
-                            else if (selectedIndex == 1)
-                            {
-                                nguoiThue.Show();
-                            }
-
-                            this.Hide();
-                        }
-
-                        else
-                        {
-                            MessageBox.Show("Failed to add account.");
-                        }
-                    }
-                    conn.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"An error occurred: {ex.ToString()}");
-                }
+                selectedIndex = int.Parse(cb_phanquyen.SelectedValue.ToString());
             }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn vai trò của bạn!");
+                return;
+            }
+            SqlCommand cmdCheck = new SqlCommand("Select Count(*) from TaiKhoan where TenDangNhap = @tenDangNhap");
+            cmdCheck.Parameters.AddWithValue("@tenDangNhap", tb_name_register.Text);
+            if (CheckDK(cmdCheck, "Tài khoản đã tồn tại. Vui lòng chọn tên đăng nhập khác!","HAVE"))
+            {
+                return;
+            }                      
+            FormThemChuTro chutro = new FormThemChuTro(tb_name_register.Text, tb_pass_register.Text);
+            FormThemNguoiThue nguoiThue = new FormThemNguoiThue(tb_name_register.Text, tb_pass_register.Text);
+            if (selectedIndex == 2)
+            {
+                chutro.Show();
+            }
+            else if (selectedIndex == 1)
+            {
+                nguoiThue.Show();
+            }
+            this.Hide();
         }
         private void bt_re_Click(object sender, EventArgs e)
         {
@@ -116,7 +81,7 @@ namespace BTL_QuanLyNhaTro
         public void Login(string username, string password)
         {
             AuthenticationService authService = new AuthenticationService();
-            authService.Authenticate(username, password);
+            Authenticate(username, password);
             //MessageBox.Show(User.RoleID.ToString());
             if (User.RoleID != 0)
             {

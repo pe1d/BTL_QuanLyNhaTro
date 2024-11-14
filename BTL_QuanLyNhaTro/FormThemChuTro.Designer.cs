@@ -49,9 +49,8 @@ namespace BTL_QuanLyNhaTro
             this.cB_NganHang = new System.Windows.Forms.ComboBox();
             this.tb_SoTaiKhoan = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btn_ThemChuTro = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.btn_huy = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -227,14 +226,6 @@ namespace BTL_QuanLyNhaTro
             this.label10.TabIndex = 19;
             this.label10.Text = "Số tài khoản";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(407, 60);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(559, 261);
-            this.dataGridView1.TabIndex = 20;
-            // 
             // btn_ThemChuTro
             // 
             this.btn_ThemChuTro.Location = new System.Drawing.Point(46, 304);
@@ -245,13 +236,24 @@ namespace BTL_QuanLyNhaTro
             this.btn_ThemChuTro.UseVisualStyleBackColor = true;
             this.btn_ThemChuTro.Click += new System.EventHandler(this.btn_ThemChuTro_Click);
             // 
+            // btn_huy
+            // 
+            this.btn_huy.Location = new System.Drawing.Point(127, 304);
+            this.btn_huy.Name = "btn_huy";
+            this.btn_huy.Size = new System.Drawing.Size(75, 23);
+            this.btn_huy.TabIndex = 22;
+            this.btn_huy.Text = "Hủy";
+            this.btn_huy.UseVisualStyleBackColor = true;
+            this.btn_huy.Visible = false;
+            this.btn_huy.Click += new System.EventHandler(this.btn_huy_Click);
+            // 
             // FormThemChuTro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(990, 344);
+            this.ClientSize = new System.Drawing.Size(434, 344);
+            this.Controls.Add(this.btn_huy);
             this.Controls.Add(this.btn_ThemChuTro);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.tb_SoTaiKhoan);
             this.Controls.Add(this.cB_NganHang);
@@ -274,7 +276,6 @@ namespace BTL_QuanLyNhaTro
             this.Controls.Add(this.label1);
             this.Name = "FormThemChuTro";
             this.Text = "FormThemChuTro";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -302,7 +303,7 @@ namespace BTL_QuanLyNhaTro
         private System.Windows.Forms.ComboBox cB_NganHang;
         private System.Windows.Forms.TextBox tb_SoTaiKhoan;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btn_ThemChuTro;
+        private System.Windows.Forms.Button btn_huy;
     }
 }

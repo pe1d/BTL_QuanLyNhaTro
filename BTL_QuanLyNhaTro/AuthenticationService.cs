@@ -15,8 +15,9 @@ namespace BTL_QuanLyNhaTro
             public static string UserID { get; set; }
             public static string Username { get; set; }
             public static int RoleID { get; set; }
+            public static string Pass { get; set; }
         }
-        public void Authenticate(string username, string password)
+        public static void Authenticate(string username, string password)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -34,13 +35,22 @@ namespace BTL_QuanLyNhaTro
                             User.UserID = reader["MaTaiKhoan"].ToString();
                             User.Username = reader["TenDangNhap"].ToString();
                             User.RoleID = int.Parse(reader["MaVaiTro"].ToString());
+                            User.Pass = reader["MatKhau"].ToString();
                         }
                     }
                 }
             }
         }
+        public static void Logout()
+        {
+            // Xóa thông tin đăng nhập của người dùng
+            User.UserID = null;
+            User.Username = null;
+            User.RoleID = 0;
 
-
+            // Có thể thêm logic để chuyển hướng người dùng về màn hình đăng nhập
+            MessageBox.Show("Đăng xuất thành công!");
+        }
     }   
     
 }

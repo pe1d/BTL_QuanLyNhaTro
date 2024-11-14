@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using static BTL_QuanLyNhaTro.AuthenticationService;
@@ -17,7 +18,7 @@ namespace BTL_QuanLyNhaTro
         {
             InitializeComponent();
             ApplyRolePermissions(User.RoleID);
-            CheckTT();
+            //CheckTT();
         }
         private void CheckTT()
         {
@@ -41,9 +42,8 @@ namespace BTL_QuanLyNhaTro
                 cmd.Parameters.AddWithValue("@Ma", User.UserID);
                 if (CheckDK(cmd, "Chưa có thông tin người dùng vui lòng nhập thông tin!","nohave"))
                 {
-                    ChuTro ct = new ChuTro();
+                    FormThemChuTro ct = new FormThemChuTro(User.Username, User.Pass);
                     ct.ShowDialog();
-                    
                 }
                 else
                 {
@@ -127,7 +127,7 @@ namespace BTL_QuanLyNhaTro
 
         private void themChuTroToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormThemChuTro f = new FormThemChuTro();
+            FormThemChuTro f = new FormThemChuTro("","");
             f.Show();
         }
 
@@ -140,6 +140,33 @@ namespace BTL_QuanLyNhaTro
         private void mApp_vRevenue_R_Click(object sender, EventArgs e)
         {
             FormBaoCaoDoanhThu f = new FormBaoCaoDoanhThu();
+            f.Show();
+        }
+
+        private void mApp_logout_Click(object sender, EventArgs e)
+        {
+            Logout();
+            var openForms = new List<Form>(Application.OpenForms.Cast<Form>());
+
+            foreach (Form form in openForms)
+            {
+                if (form.Name != "WelcomeForm")
+                {
+                    form.Close();
+                }
+            }
+            WelcomeForm f = new WelcomeForm();
+            f.Show();
+        }
+
+        private void FirstForm_Shown(object sender, EventArgs e)
+        {
+            CheckTT();
+        }
+
+        private void thToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormThemNguoiThue f = new FormThemNguoiThue("", "");
             f.Show();
         }
     }

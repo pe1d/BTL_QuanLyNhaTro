@@ -117,6 +117,7 @@ namespace BTL_QuanLyNhaTro
             this.mApp_logout.Name = "mApp_logout";
             this.mApp_logout.Size = new System.Drawing.Size(212, 22);
             this.mApp_logout.Text = "Đăng xuất";
+            this.mApp_logout.Click += new System.EventHandler(this.mApp_logout_Click);
             // 
             // mApp_Manage
             // 
@@ -183,7 +184,7 @@ namespace BTL_QuanLyNhaTro
             this.cậpNhậtHóaĐơnThanhToánChoKháchThuêToolStripMenuItem,
             this.thToolStripMenuItem});
             this.mApp_mUser_R.Name = "mApp_mUser_R";
-            this.mApp_mUser_R.Size = new System.Drawing.Size(177, 22);
+            this.mApp_mUser_R.Size = new System.Drawing.Size(180, 22);
             this.mApp_mUser_R.Text = "Quản lý khách thuê";
             // 
             // mApp_vUser
@@ -203,6 +204,7 @@ namespace BTL_QuanLyNhaTro
             this.thToolStripMenuItem.Name = "thToolStripMenuItem";
             this.thToolStripMenuItem.Size = new System.Drawing.Size(315, 22);
             this.thToolStripMenuItem.Text = "Thêm khách thuê";
+            this.thToolStripMenuItem.Click += new System.EventHandler(this.thToolStripMenuItem_Click);
             // 
             // mApp_mBill_R
             // 
@@ -292,6 +294,7 @@ namespace BTL_QuanLyNhaTro
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FirstForm";
             this.Text = "FirstForm";
+            this.Shown += new System.EventHandler(this.FirstForm_Shown);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
